@@ -1,0 +1,13 @@
+/home/lin/kaldi/src/featbin/compute-cmvn-stats-two-channel cache/data/mfcc/test/reco2file_and_channel scp:/feats.scp ark,scp:cache/mfcc/test/cmvn_test.ark,cache/mfcc/test/cmvn_test.scp 
+ERROR (compute-cmvn-stats-two-channel[5.1.104~1391-6739d]:Input():kaldi-io.cc:742) Error opening input stream cache/data/mfcc/test/reco2file_and_channel
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::Input::Input(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool*)
+kaldi::GetUtterancePairs(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::vector<std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >, std::allocator<std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > > > >*)
+main
+__libc_start_main
+_start
+

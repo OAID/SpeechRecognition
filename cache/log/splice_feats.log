@@ -1,0 +1,1 @@
+/home/firefly/lf_test/kaldi/src/featbin/splice-feats --left-context=3 --right-context=3 ark:cache/apply-cmvn.ark ark:cache/splice-feats.ark 

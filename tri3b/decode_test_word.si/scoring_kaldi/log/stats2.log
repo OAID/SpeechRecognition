@@ -1,0 +1,5 @@
+# cat exp/tri3b/decode_test_word.si/scoring_kaldi/wer_details/per_utt | utils/scoring/wer_ops_details.pl --special-symbol '***' | sort -b -i -k 1,1 -k 4,4rn -k 2,2 -k 3,3 > exp/tri3b/decode_test_word.si/scoring_kaldi/wer_details/ops 
+# Started at Tue Oct 17 15:45:16 CST 2017
+#
+# Accounting: time=0 threads=1
+# Ended (code 0) at Tue Oct 17 15:45:16 CST 2017, elapsed time 0 seconds

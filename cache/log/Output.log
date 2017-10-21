@@ -1,0 +1,323 @@
+<MakeMfcc>: no segments file exists: assuming wav.scp indexed by utterance.
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:cache/exp/make_mfcc/test/wav_test.1.scp ark:cache/mfcc.ark 2>cache/log/compute-mfcc.log
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/copy-feats  --compress=true ark:cache/mfcc.ark ark,scp:cache/mfcc/test/raw_mfcc_test.1.ark,cache/mfcc/test/raw_mfcc_test.1.scp 2>cache/log/copy-feats.log
+<ComputeCmvnStats>: /home/firefly/lf_test/kaldi/src/featbin/compute-cmvn-stats --spk2utt=ark:cache/data/mfcc/test/spk2utt scp:cache/data/mfcc/test/feats.scp ark,scp:cache/mfcc/test/cmvn_test.ark,cache/mfcc/test/cmvn_test.scp 2>cache/log/compute_cmvn_stats.log
+<ComputeCmvnStats>: Succeeded creating CMVN stats for test
+<Decode>: feature type is lda
+<Decode>: /home/firefly/lf_test/kaldi/src/bin/am-info --print-args=false tri3b/final.mdl | grep pdfs | awk '{print $NF}' > cache/pdfs_in_model
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/apply-cmvn  --utt2spk=ark:cache/data/mfcc/test/split1/1/utt2spk scp:cache/data/mfcc/test/split1/1/cmvn.scp scp:cache/data/mfcc/test/split1/1/feats.scp ark:cache/apply-cmvn.ark 2>cache/log/apply_cmvn.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/splice-feats --left-context=3 --right-context=3 ark:cache/apply-cmvn.ark ark:cache/splice-feats.ark 2>cache/log/splice_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/transform-feats tri3b/final.mat ark:cache/splice-feats.ark ark:cache/trasform-feats.ark 2>cache/log/transform_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/gmmbin/gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=tri3b/graph_word/words.txt tri3b/final.mdl tri3b/graph_word/HCLG.fst ark:cache/trasform-feats.ark ark:- 1>tri3b/decode_test_word/lat.1 2>cache/log/gmm_latgen_faster.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-scale --inv-acoustic-scale=17 ark:tri3b/decode_test_word/lat.1 ark:cache/scaled.lats 2>cache/log/lattice_scale.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-add-penalty --word-ins-penalty=1.0 ark:cache/scaled.lats ark:cache/add.lats 2>cache/log/lattice_add_penalty.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-prune --beam=6 ark:cache/add.lats ark:cache/prune.lats 2>cache/log/latiice_prune.log
+<Decode>: scoring with word insertion penalty=1.0
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-best-path --word-symbol-table=tri3b/graph_word/words.txt ark:cache/prune.lats ark,t:cache/final.lats 2>cache/log/lattice_best_path.log
+<DecodeThread>: decode time is : 728.000000 ms
+<MakeMfcc>: no segments file exists: assuming wav.scp indexed by utterance.
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:cache/exp/make_mfcc/test/wav_test.1.scp ark:cache/mfcc.ark 2>cache/log/compute-mfcc.log
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/copy-feats  --compress=true ark:cache/mfcc.ark ark,scp:cache/mfcc/test/raw_mfcc_test.1.ark,cache/mfcc/test/raw_mfcc_test.1.scp 2>cache/log/copy-feats.log
+<ComputeCmvnStats>: /home/firefly/lf_test/kaldi/src/featbin/compute-cmvn-stats --spk2utt=ark:cache/data/mfcc/test/spk2utt scp:cache/data/mfcc/test/feats.scp ark,scp:cache/mfcc/test/cmvn_test.ark,cache/mfcc/test/cmvn_test.scp 2>cache/log/compute_cmvn_stats.log
+<ComputeCmvnStats>: Succeeded creating CMVN stats for test
+<Decode>: feature type is lda
+<Decode>: /home/firefly/lf_test/kaldi/src/bin/am-info --print-args=false tri3b/final.mdl | grep pdfs | awk '{print $NF}' > cache/pdfs_in_model
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/apply-cmvn  --utt2spk=ark:cache/data/mfcc/test/split1/1/utt2spk scp:cache/data/mfcc/test/split1/1/cmvn.scp scp:cache/data/mfcc/test/split1/1/feats.scp ark:cache/apply-cmvn.ark 2>cache/log/apply_cmvn.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/splice-feats --left-context=3 --right-context=3 ark:cache/apply-cmvn.ark ark:cache/splice-feats.ark 2>cache/log/splice_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/transform-feats tri3b/final.mat ark:cache/splice-feats.ark ark:cache/trasform-feats.ark 2>cache/log/transform_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/gmmbin/gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=tri3b/graph_word/words.txt tri3b/final.mdl tri3b/graph_word/HCLG.fst ark:cache/trasform-feats.ark ark:- 1>tri3b/decode_test_word/lat.1 2>cache/log/gmm_latgen_faster.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-scale --inv-acoustic-scale=17 ark:tri3b/decode_test_word/lat.1 ark:cache/scaled.lats 2>cache/log/lattice_scale.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-add-penalty --word-ins-penalty=1.0 ark:cache/scaled.lats ark:cache/add.lats 2>cache/log/lattice_add_penalty.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-prune --beam=6 ark:cache/add.lats ark:cache/prune.lats 2>cache/log/latiice_prune.log
+<Decode>: scoring with word insertion penalty=1.0
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-best-path --word-symbol-table=tri3b/graph_word/words.txt ark:cache/prune.lats ark,t:cache/final.lats 2>cache/log/lattice_best_path.log
+<DecodeThread>: decode time is : 1237.000000 ms
+<MakeMfcc>: no segments file exists: assuming wav.scp indexed by utterance.
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:cache/exp/make_mfcc/test/wav_test.1.scp ark:cache/mfcc.ark 2>cache/log/compute-mfcc.log
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/copy-feats  --compress=true ark:cache/mfcc.ark ark,scp:cache/mfcc/test/raw_mfcc_test.1.ark,cache/mfcc/test/raw_mfcc_test.1.scp 2>cache/log/copy-feats.log
+<ComputeCmvnStats>: /home/firefly/lf_test/kaldi/src/featbin/compute-cmvn-stats --spk2utt=ark:cache/data/mfcc/test/spk2utt scp:cache/data/mfcc/test/feats.scp ark,scp:cache/mfcc/test/cmvn_test.ark,cache/mfcc/test/cmvn_test.scp 2>cache/log/compute_cmvn_stats.log
+<ComputeCmvnStats>: Succeeded creating CMVN stats for test
+<Decode>: feature type is lda
+<Decode>: /home/firefly/lf_test/kaldi/src/bin/am-info --print-args=false tri3b/final.mdl | grep pdfs | awk '{print $NF}' > cache/pdfs_in_model
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/apply-cmvn  --utt2spk=ark:cache/data/mfcc/test/split1/1/utt2spk scp:cache/data/mfcc/test/split1/1/cmvn.scp scp:cache/data/mfcc/test/split1/1/feats.scp ark:cache/apply-cmvn.ark 2>cache/log/apply_cmvn.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/splice-feats --left-context=3 --right-context=3 ark:cache/apply-cmvn.ark ark:cache/splice-feats.ark 2>cache/log/splice_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/transform-feats tri3b/final.mat ark:cache/splice-feats.ark ark:cache/trasform-feats.ark 2>cache/log/transform_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/gmmbin/gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=tri3b/graph_word/words.txt tri3b/final.mdl tri3b/graph_word/HCLG.fst ark:cache/trasform-feats.ark ark:- 1>tri3b/decode_test_word/lat.1 2>cache/log/gmm_latgen_faster.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-scale --inv-acoustic-scale=17 ark:tri3b/decode_test_word/lat.1 ark:cache/scaled.lats 2>cache/log/lattice_scale.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-add-penalty --word-ins-penalty=1.0 ark:cache/scaled.lats ark:cache/add.lats 2>cache/log/lattice_add_penalty.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-prune --beam=6 ark:cache/add.lats ark:cache/prune.lats 2>cache/log/latiice_prune.log
+<Decode>: scoring with word insertion penalty=1.0
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-best-path --word-symbol-table=tri3b/graph_word/words.txt ark:cache/prune.lats ark,t:cache/final.lats 2>cache/log/lattice_best_path.log
+<DecodeThread>: decode time is : 583.000000 ms
+<MakeMfcc>: no segments file exists: assuming wav.scp indexed by utterance.
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:cache/exp/make_mfcc/test/wav_test.1.scp ark:cache/mfcc.ark 2>cache/log/compute-mfcc.log
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/copy-feats  --compress=true ark:cache/mfcc.ark ark,scp:cache/mfcc/test/raw_mfcc_test.1.ark,cache/mfcc/test/raw_mfcc_test.1.scp 2>cache/log/copy-feats.log
+<ComputeCmvnStats>: /home/firefly/lf_test/kaldi/src/featbin/compute-cmvn-stats --spk2utt=ark:cache/data/mfcc/test/spk2utt scp:cache/data/mfcc/test/feats.scp ark,scp:cache/mfcc/test/cmvn_test.ark,cache/mfcc/test/cmvn_test.scp 2>cache/log/compute_cmvn_stats.log
+<ComputeCmvnStats>: Succeeded creating CMVN stats for test
+<Decode>: feature type is lda
+<Decode>: /home/firefly/lf_test/kaldi/src/bin/am-info --print-args=false tri3b/final.mdl | grep pdfs | awk '{print $NF}' > cache/pdfs_in_model
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/apply-cmvn  --utt2spk=ark:cache/data/mfcc/test/split1/1/utt2spk scp:cache/data/mfcc/test/split1/1/cmvn.scp scp:cache/data/mfcc/test/split1/1/feats.scp ark:cache/apply-cmvn.ark 2>cache/log/apply_cmvn.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/splice-feats --left-context=3 --right-context=3 ark:cache/apply-cmvn.ark ark:cache/splice-feats.ark 2>cache/log/splice_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/transform-feats tri3b/final.mat ark:cache/splice-feats.ark ark:cache/trasform-feats.ark 2>cache/log/transform_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/gmmbin/gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=tri3b/graph_word/words.txt tri3b/final.mdl tri3b/graph_word/HCLG.fst ark:cache/trasform-feats.ark ark:- 1>tri3b/decode_test_word/lat.1 2>cache/log/gmm_latgen_faster.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-scale --inv-acoustic-scale=17 ark:tri3b/decode_test_word/lat.1 ark:cache/scaled.lats 2>cache/log/lattice_scale.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-add-penalty --word-ins-penalty=1.0 ark:cache/scaled.lats ark:cache/add.lats 2>cache/log/lattice_add_penalty.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-prune --beam=6 ark:cache/add.lats ark:cache/prune.lats 2>cache/log/latiice_prune.log
+<Decode>: scoring with word insertion penalty=1.0
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-best-path --word-symbol-table=tri3b/graph_word/words.txt ark:cache/prune.lats ark,t:cache/final.lats 2>cache/log/lattice_best_path.log
+<DecodeThread>: decode time is : 810.000000 ms
+<MakeMfcc>: no segments file exists: assuming wav.scp indexed by utterance.
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:cache/exp/make_mfcc/test/wav_test.1.scp ark:cache/mfcc.ark 2>cache/log/compute-mfcc.log
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/copy-feats  --compress=true ark:cache/mfcc.ark ark,scp:cache/mfcc/test/raw_mfcc_test.1.ark,cache/mfcc/test/raw_mfcc_test.1.scp 2>cache/log/copy-feats.log
+<ComputeCmvnStats>: /home/firefly/lf_test/kaldi/src/featbin/compute-cmvn-stats --spk2utt=ark:cache/data/mfcc/test/spk2utt scp:cache/data/mfcc/test/feats.scp ark,scp:cache/mfcc/test/cmvn_test.ark,cache/mfcc/test/cmvn_test.scp 2>cache/log/compute_cmvn_stats.log
+<ComputeCmvnStats>: Succeeded creating CMVN stats for test
+<Decode>: feature type is lda
+<Decode>: /home/firefly/lf_test/kaldi/src/bin/am-info --print-args=false tri3b/final.mdl | grep pdfs | awk '{print $NF}' > cache/pdfs_in_model
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/apply-cmvn  --utt2spk=ark:cache/data/mfcc/test/split1/1/utt2spk scp:cache/data/mfcc/test/split1/1/cmvn.scp scp:cache/data/mfcc/test/split1/1/feats.scp ark:cache/apply-cmvn.ark 2>cache/log/apply_cmvn.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/splice-feats --left-context=3 --right-context=3 ark:cache/apply-cmvn.ark ark:cache/splice-feats.ark 2>cache/log/splice_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/transform-feats tri3b/final.mat ark:cache/splice-feats.ark ark:cache/trasform-feats.ark 2>cache/log/transform_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/gmmbin/gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=tri3b/graph_word/words.txt tri3b/final.mdl tri3b/graph_word/HCLG.fst ark:cache/trasform-feats.ark ark:- 1>tri3b/decode_test_word/lat.1 2>cache/log/gmm_latgen_faster.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-scale --inv-acoustic-scale=17 ark:tri3b/decode_test_word/lat.1 ark:cache/scaled.lats 2>cache/log/lattice_scale.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-add-penalty --word-ins-penalty=1.0 ark:cache/scaled.lats ark:cache/add.lats 2>cache/log/lattice_add_penalty.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-prune --beam=6 ark:cache/add.lats ark:cache/prune.lats 2>cache/log/latiice_prune.log
+<Decode>: scoring with word insertion penalty=1.0
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-best-path --word-symbol-table=tri3b/graph_word/words.txt ark:cache/prune.lats ark,t:cache/final.lats 2>cache/log/lattice_best_path.log
+<DecodeThread>: decode time is : 541.000000 ms
+<MakeMfcc>: no segments file exists: assuming wav.scp indexed by utterance.
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:cache/exp/make_mfcc/test/wav_test.1.scp ark:cache/mfcc.ark 2>cache/log/compute-mfcc.log
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/copy-feats  --compress=true ark:cache/mfcc.ark ark,scp:cache/mfcc/test/raw_mfcc_test.1.ark,cache/mfcc/test/raw_mfcc_test.1.scp 2>cache/log/copy-feats.log
+<ComputeCmvnStats>: /home/firefly/lf_test/kaldi/src/featbin/compute-cmvn-stats --spk2utt=ark:cache/data/mfcc/test/spk2utt scp:cache/data/mfcc/test/feats.scp ark,scp:cache/mfcc/test/cmvn_test.ark,cache/mfcc/test/cmvn_test.scp 2>cache/log/compute_cmvn_stats.log
+<ComputeCmvnStats>: Succeeded creating CMVN stats for test
+<Decode>: feature type is lda
+<Decode>: /home/firefly/lf_test/kaldi/src/bin/am-info --print-args=false tri3b/final.mdl | grep pdfs | awk '{print $NF}' > cache/pdfs_in_model
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/apply-cmvn  --utt2spk=ark:cache/data/mfcc/test/split1/1/utt2spk scp:cache/data/mfcc/test/split1/1/cmvn.scp scp:cache/data/mfcc/test/split1/1/feats.scp ark:cache/apply-cmvn.ark 2>cache/log/apply_cmvn.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/splice-feats --left-context=3 --right-context=3 ark:cache/apply-cmvn.ark ark:cache/splice-feats.ark 2>cache/log/splice_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/transform-feats tri3b/final.mat ark:cache/splice-feats.ark ark:cache/trasform-feats.ark 2>cache/log/transform_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/gmmbin/gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=tri3b/graph_word/words.txt tri3b/final.mdl tri3b/graph_word/HCLG.fst ark:cache/trasform-feats.ark ark:- 1>tri3b/decode_test_word/lat.1 2>cache/log/gmm_latgen_faster.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-scale --inv-acoustic-scale=17 ark:tri3b/decode_test_word/lat.1 ark:cache/scaled.lats 2>cache/log/lattice_scale.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-add-penalty --word-ins-penalty=1.0 ark:cache/scaled.lats ark:cache/add.lats 2>cache/log/lattice_add_penalty.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-prune --beam=6 ark:cache/add.lats ark:cache/prune.lats 2>cache/log/latiice_prune.log
+<Decode>: scoring with word insertion penalty=1.0
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-best-path --word-symbol-table=tri3b/graph_word/words.txt ark:cache/prune.lats ark,t:cache/final.lats 2>cache/log/lattice_best_path.log
+<DecodeThread>: decode time is : 761.000000 ms
+<MakeMfcc>: no segments file exists: assuming wav.scp indexed by utterance.
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:cache/exp/make_mfcc/test/wav_test.1.scp ark:cache/mfcc.ark 2>cache/log/compute-mfcc.log
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/copy-feats  --compress=true ark:cache/mfcc.ark ark,scp:cache/mfcc/test/raw_mfcc_test.1.ark,cache/mfcc/test/raw_mfcc_test.1.scp 2>cache/log/copy-feats.log
+<ComputeCmvnStats>: /home/firefly/lf_test/kaldi/src/featbin/compute-cmvn-stats --spk2utt=ark:cache/data/mfcc/test/spk2utt scp:cache/data/mfcc/test/feats.scp ark,scp:cache/mfcc/test/cmvn_test.ark,cache/mfcc/test/cmvn_test.scp 2>cache/log/compute_cmvn_stats.log
+<ComputeCmvnStats>: Succeeded creating CMVN stats for test
+<Decode>: feature type is lda
+<Decode>: /home/firefly/lf_test/kaldi/src/bin/am-info --print-args=false tri3b/final.mdl | grep pdfs | awk '{print $NF}' > cache/pdfs_in_model
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/apply-cmvn  --utt2spk=ark:cache/data/mfcc/test/split1/1/utt2spk scp:cache/data/mfcc/test/split1/1/cmvn.scp scp:cache/data/mfcc/test/split1/1/feats.scp ark:cache/apply-cmvn.ark 2>cache/log/apply_cmvn.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/splice-feats --left-context=3 --right-context=3 ark:cache/apply-cmvn.ark ark:cache/splice-feats.ark 2>cache/log/splice_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/transform-feats tri3b/final.mat ark:cache/splice-feats.ark ark:cache/trasform-feats.ark 2>cache/log/transform_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/gmmbin/gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=tri3b/graph_word/words.txt tri3b/final.mdl tri3b/graph_word/HCLG.fst ark:cache/trasform-feats.ark ark:- 1>tri3b/decode_test_word/lat.1 2>cache/log/gmm_latgen_faster.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-scale --inv-acoustic-scale=17 ark:tri3b/decode_test_word/lat.1 ark:cache/scaled.lats 2>cache/log/lattice_scale.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-add-penalty --word-ins-penalty=1.0 ark:cache/scaled.lats ark:cache/add.lats 2>cache/log/lattice_add_penalty.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-prune --beam=6 ark:cache/add.lats ark:cache/prune.lats 2>cache/log/latiice_prune.log
+<Decode>: scoring with word insertion penalty=1.0
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-best-path --word-symbol-table=tri3b/graph_word/words.txt ark:cache/prune.lats ark,t:cache/final.lats 2>cache/log/lattice_best_path.log
+<DecodeThread>: decode time is : 1799.000000 ms
+<MakeMfcc>: no segments file exists: assuming wav.scp indexed by utterance.
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:cache/exp/make_mfcc/test/wav_test.1.scp ark:cache/mfcc.ark 2>cache/log/compute-mfcc.log
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/copy-feats  --compress=true ark:cache/mfcc.ark ark,scp:cache/mfcc/test/raw_mfcc_test.1.ark,cache/mfcc/test/raw_mfcc_test.1.scp 2>cache/log/copy-feats.log
+<ComputeCmvnStats>: /home/firefly/lf_test/kaldi/src/featbin/compute-cmvn-stats --spk2utt=ark:cache/data/mfcc/test/spk2utt scp:cache/data/mfcc/test/feats.scp ark,scp:cache/mfcc/test/cmvn_test.ark,cache/mfcc/test/cmvn_test.scp 2>cache/log/compute_cmvn_stats.log
+<ComputeCmvnStats>: Succeeded creating CMVN stats for test
+<Decode>: feature type is lda
+<Decode>: /home/firefly/lf_test/kaldi/src/bin/am-info --print-args=false tri3b/final.mdl | grep pdfs | awk '{print $NF}' > cache/pdfs_in_model
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/apply-cmvn  --utt2spk=ark:cache/data/mfcc/test/split1/1/utt2spk scp:cache/data/mfcc/test/split1/1/cmvn.scp scp:cache/data/mfcc/test/split1/1/feats.scp ark:cache/apply-cmvn.ark 2>cache/log/apply_cmvn.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/splice-feats --left-context=3 --right-context=3 ark:cache/apply-cmvn.ark ark:cache/splice-feats.ark 2>cache/log/splice_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/transform-feats tri3b/final.mat ark:cache/splice-feats.ark ark:cache/trasform-feats.ark 2>cache/log/transform_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/gmmbin/gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=tri3b/graph_word/words.txt tri3b/final.mdl tri3b/graph_word/HCLG.fst ark:cache/trasform-feats.ark ark:- 1>tri3b/decode_test_word/lat.1 2>cache/log/gmm_latgen_faster.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-scale --inv-acoustic-scale=17 ark:tri3b/decode_test_word/lat.1 ark:cache/scaled.lats 2>cache/log/lattice_scale.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-add-penalty --word-ins-penalty=1.0 ark:cache/scaled.lats ark:cache/add.lats 2>cache/log/lattice_add_penalty.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-prune --beam=6 ark:cache/add.lats ark:cache/prune.lats 2>cache/log/latiice_prune.log
+<Decode>: scoring with word insertion penalty=1.0
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-best-path --word-symbol-table=tri3b/graph_word/words.txt ark:cache/prune.lats ark,t:cache/final.lats 2>cache/log/lattice_best_path.log
+<DecodeThread>: decode time is : 482.000000 ms
+<MakeMfcc>: no segments file exists: assuming wav.scp indexed by utterance.
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:cache/exp/make_mfcc/test/wav_test.1.scp ark:cache/mfcc.ark 2>cache/log/compute-mfcc.log
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/copy-feats  --compress=true ark:cache/mfcc.ark ark,scp:cache/mfcc/test/raw_mfcc_test.1.ark,cache/mfcc/test/raw_mfcc_test.1.scp 2>cache/log/copy-feats.log
+<ComputeCmvnStats>: /home/firefly/lf_test/kaldi/src/featbin/compute-cmvn-stats --spk2utt=ark:cache/data/mfcc/test/spk2utt scp:cache/data/mfcc/test/feats.scp ark,scp:cache/mfcc/test/cmvn_test.ark,cache/mfcc/test/cmvn_test.scp 2>cache/log/compute_cmvn_stats.log
+<ComputeCmvnStats>: Succeeded creating CMVN stats for test
+<Decode>: feature type is lda
+<Decode>: /home/firefly/lf_test/kaldi/src/bin/am-info --print-args=false tri3b/final.mdl | grep pdfs | awk '{print $NF}' > cache/pdfs_in_model
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/apply-cmvn  --utt2spk=ark:cache/data/mfcc/test/split1/1/utt2spk scp:cache/data/mfcc/test/split1/1/cmvn.scp scp:cache/data/mfcc/test/split1/1/feats.scp ark:cache/apply-cmvn.ark 2>cache/log/apply_cmvn.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/splice-feats --left-context=3 --right-context=3 ark:cache/apply-cmvn.ark ark:cache/splice-feats.ark 2>cache/log/splice_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/transform-feats tri3b/final.mat ark:cache/splice-feats.ark ark:cache/trasform-feats.ark 2>cache/log/transform_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/gmmbin/gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=tri3b/graph_word/words.txt tri3b/final.mdl tri3b/graph_word/HCLG.fst ark:cache/trasform-feats.ark ark:- 1>tri3b/decode_test_word/lat.1 2>cache/log/gmm_latgen_faster.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-scale --inv-acoustic-scale=17 ark:tri3b/decode_test_word/lat.1 ark:cache/scaled.lats 2>cache/log/lattice_scale.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-add-penalty --word-ins-penalty=1.0 ark:cache/scaled.lats ark:cache/add.lats 2>cache/log/lattice_add_penalty.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-prune --beam=6 ark:cache/add.lats ark:cache/prune.lats 2>cache/log/latiice_prune.log
+<Decode>: scoring with word insertion penalty=1.0
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-best-path --word-symbol-table=tri3b/graph_word/words.txt ark:cache/prune.lats ark,t:cache/final.lats 2>cache/log/lattice_best_path.log
+<DecodeThread>: decode time is : 485.000000 ms
+<MakeMfcc>: no segments file exists: assuming wav.scp indexed by utterance.
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:cache/exp/make_mfcc/test/wav_test.1.scp ark:cache/mfcc.ark 2>cache/log/compute-mfcc.log
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/copy-feats  --compress=true ark:cache/mfcc.ark ark,scp:cache/mfcc/test/raw_mfcc_test.1.ark,cache/mfcc/test/raw_mfcc_test.1.scp 2>cache/log/copy-feats.log
+<ComputeCmvnStats>: /home/firefly/lf_test/kaldi/src/featbin/compute-cmvn-stats --spk2utt=ark:cache/data/mfcc/test/spk2utt scp:cache/data/mfcc/test/feats.scp ark,scp:cache/mfcc/test/cmvn_test.ark,cache/mfcc/test/cmvn_test.scp 2>cache/log/compute_cmvn_stats.log
+<ComputeCmvnStats>: Succeeded creating CMVN stats for test
+<Decode>: feature type is lda
+<Decode>: /home/firefly/lf_test/kaldi/src/bin/am-info --print-args=false tri3b/final.mdl | grep pdfs | awk '{print $NF}' > cache/pdfs_in_model
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/apply-cmvn  --utt2spk=ark:cache/data/mfcc/test/split1/1/utt2spk scp:cache/data/mfcc/test/split1/1/cmvn.scp scp:cache/data/mfcc/test/split1/1/feats.scp ark:cache/apply-cmvn.ark 2>cache/log/apply_cmvn.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/splice-feats --left-context=3 --right-context=3 ark:cache/apply-cmvn.ark ark:cache/splice-feats.ark 2>cache/log/splice_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/transform-feats tri3b/final.mat ark:cache/splice-feats.ark ark:cache/trasform-feats.ark 2>cache/log/transform_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/gmmbin/gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=tri3b/graph_word/words.txt tri3b/final.mdl tri3b/graph_word/HCLG.fst ark:cache/trasform-feats.ark ark:- 1>tri3b/decode_test_word/lat.1 2>cache/log/gmm_latgen_faster.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-scale --inv-acoustic-scale=17 ark:tri3b/decode_test_word/lat.1 ark:cache/scaled.lats 2>cache/log/lattice_scale.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-add-penalty --word-ins-penalty=1.0 ark:cache/scaled.lats ark:cache/add.lats 2>cache/log/lattice_add_penalty.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-prune --beam=6 ark:cache/add.lats ark:cache/prune.lats 2>cache/log/latiice_prune.log
+<Decode>: scoring with word insertion penalty=1.0
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-best-path --word-symbol-table=tri3b/graph_word/words.txt ark:cache/prune.lats ark,t:cache/final.lats 2>cache/log/lattice_best_path.log
+<DecodeThread>: decode time is : 812.000000 ms
+<MakeMfcc>: no segments file exists: assuming wav.scp indexed by utterance.
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:cache/exp/make_mfcc/test/wav_test.1.scp ark:cache/mfcc.ark 2>cache/log/compute-mfcc.log
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/copy-feats  --compress=true ark:cache/mfcc.ark ark,scp:cache/mfcc/test/raw_mfcc_test.1.ark,cache/mfcc/test/raw_mfcc_test.1.scp 2>cache/log/copy-feats.log
+<ComputeCmvnStats>: /home/firefly/lf_test/kaldi/src/featbin/compute-cmvn-stats --spk2utt=ark:cache/data/mfcc/test/spk2utt scp:cache/data/mfcc/test/feats.scp ark,scp:cache/mfcc/test/cmvn_test.ark,cache/mfcc/test/cmvn_test.scp 2>cache/log/compute_cmvn_stats.log
+<ComputeCmvnStats>: Succeeded creating CMVN stats for test
+<Decode>: feature type is lda
+<Decode>: /home/firefly/lf_test/kaldi/src/bin/am-info --print-args=false tri3b/final.mdl | grep pdfs | awk '{print $NF}' > cache/pdfs_in_model
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/apply-cmvn  --utt2spk=ark:cache/data/mfcc/test/split1/1/utt2spk scp:cache/data/mfcc/test/split1/1/cmvn.scp scp:cache/data/mfcc/test/split1/1/feats.scp ark:cache/apply-cmvn.ark 2>cache/log/apply_cmvn.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/splice-feats --left-context=3 --right-context=3 ark:cache/apply-cmvn.ark ark:cache/splice-feats.ark 2>cache/log/splice_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/transform-feats tri3b/final.mat ark:cache/splice-feats.ark ark:cache/trasform-feats.ark 2>cache/log/transform_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/gmmbin/gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=tri3b/graph_word/words.txt tri3b/final.mdl tri3b/graph_word/HCLG.fst ark:cache/trasform-feats.ark ark:- 1>tri3b/decode_test_word/lat.1 2>cache/log/gmm_latgen_faster.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-scale --inv-acoustic-scale=17 ark:tri3b/decode_test_word/lat.1 ark:cache/scaled.lats 2>cache/log/lattice_scale.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-add-penalty --word-ins-penalty=1.0 ark:cache/scaled.lats ark:cache/add.lats 2>cache/log/lattice_add_penalty.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-prune --beam=6 ark:cache/add.lats ark:cache/prune.lats 2>cache/log/latiice_prune.log
+<Decode>: scoring with word insertion penalty=1.0
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-best-path --word-symbol-table=tri3b/graph_word/words.txt ark:cache/prune.lats ark,t:cache/final.lats 2>cache/log/lattice_best_path.log
+<DecodeThread>: decode time is : 664.000000 ms
+<MakeMfcc>: no segments file exists: assuming wav.scp indexed by utterance.
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:cache/exp/make_mfcc/test/wav_test.1.scp ark:cache/mfcc.ark 2>cache/log/compute-mfcc.log
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/copy-feats  --compress=true ark:cache/mfcc.ark ark,scp:cache/mfcc/test/raw_mfcc_test.1.ark,cache/mfcc/test/raw_mfcc_test.1.scp 2>cache/log/copy-feats.log
+<ComputeCmvnStats>: /home/firefly/lf_test/kaldi/src/featbin/compute-cmvn-stats --spk2utt=ark:cache/data/mfcc/test/spk2utt scp:cache/data/mfcc/test/feats.scp ark,scp:cache/mfcc/test/cmvn_test.ark,cache/mfcc/test/cmvn_test.scp 2>cache/log/compute_cmvn_stats.log
+<ComputeCmvnStats>: Succeeded creating CMVN stats for test
+<Decode>: feature type is lda
+<Decode>: /home/firefly/lf_test/kaldi/src/bin/am-info --print-args=false tri3b/final.mdl | grep pdfs | awk '{print $NF}' > cache/pdfs_in_model
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/apply-cmvn  --utt2spk=ark:cache/data/mfcc/test/split1/1/utt2spk scp:cache/data/mfcc/test/split1/1/cmvn.scp scp:cache/data/mfcc/test/split1/1/feats.scp ark:cache/apply-cmvn.ark 2>cache/log/apply_cmvn.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/splice-feats --left-context=3 --right-context=3 ark:cache/apply-cmvn.ark ark:cache/splice-feats.ark 2>cache/log/splice_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/transform-feats tri3b/final.mat ark:cache/splice-feats.ark ark:cache/trasform-feats.ark 2>cache/log/transform_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/gmmbin/gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=tri3b/graph_word/words.txt tri3b/final.mdl tri3b/graph_word/HCLG.fst ark:cache/trasform-feats.ark ark:- 1>tri3b/decode_test_word/lat.1 2>cache/log/gmm_latgen_faster.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-scale --inv-acoustic-scale=17 ark:tri3b/decode_test_word/lat.1 ark:cache/scaled.lats 2>cache/log/lattice_scale.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-add-penalty --word-ins-penalty=1.0 ark:cache/scaled.lats ark:cache/add.lats 2>cache/log/lattice_add_penalty.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-prune --beam=6 ark:cache/add.lats ark:cache/prune.lats 2>cache/log/latiice_prune.log
+<Decode>: scoring with word insertion penalty=1.0
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-best-path --word-symbol-table=tri3b/graph_word/words.txt ark:cache/prune.lats ark,t:cache/final.lats 2>cache/log/lattice_best_path.log
+<DecodeThread>: decode time is : 779.000000 ms
+<MakeMfcc>: no segments file exists: assuming wav.scp indexed by utterance.
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:cache/exp/make_mfcc/test/wav_test.1.scp ark:cache/mfcc.ark 2>cache/log/compute-mfcc.log
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/copy-feats  --compress=true ark:cache/mfcc.ark ark,scp:cache/mfcc/test/raw_mfcc_test.1.ark,cache/mfcc/test/raw_mfcc_test.1.scp 2>cache/log/copy-feats.log
+<ComputeCmvnStats>: /home/firefly/lf_test/kaldi/src/featbin/compute-cmvn-stats --spk2utt=ark:cache/data/mfcc/test/spk2utt scp:cache/data/mfcc/test/feats.scp ark,scp:cache/mfcc/test/cmvn_test.ark,cache/mfcc/test/cmvn_test.scp 2>cache/log/compute_cmvn_stats.log
+<ComputeCmvnStats>: Succeeded creating CMVN stats for test
+<Decode>: feature type is lda
+<Decode>: /home/firefly/lf_test/kaldi/src/bin/am-info --print-args=false tri3b/final.mdl | grep pdfs | awk '{print $NF}' > cache/pdfs_in_model
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/apply-cmvn  --utt2spk=ark:cache/data/mfcc/test/split1/1/utt2spk scp:cache/data/mfcc/test/split1/1/cmvn.scp scp:cache/data/mfcc/test/split1/1/feats.scp ark:cache/apply-cmvn.ark 2>cache/log/apply_cmvn.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/splice-feats --left-context=3 --right-context=3 ark:cache/apply-cmvn.ark ark:cache/splice-feats.ark 2>cache/log/splice_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/transform-feats tri3b/final.mat ark:cache/splice-feats.ark ark:cache/trasform-feats.ark 2>cache/log/transform_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/gmmbin/gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=tri3b/graph_word/words.txt tri3b/final.mdl tri3b/graph_word/HCLG.fst ark:cache/trasform-feats.ark ark:- 1>tri3b/decode_test_word/lat.1 2>cache/log/gmm_latgen_faster.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-scale --inv-acoustic-scale=17 ark:tri3b/decode_test_word/lat.1 ark:cache/scaled.lats 2>cache/log/lattice_scale.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-add-penalty --word-ins-penalty=1.0 ark:cache/scaled.lats ark:cache/add.lats 2>cache/log/lattice_add_penalty.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-prune --beam=6 ark:cache/add.lats ark:cache/prune.lats 2>cache/log/latiice_prune.log
+<Decode>: scoring with word insertion penalty=1.0
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-best-path --word-symbol-table=tri3b/graph_word/words.txt ark:cache/prune.lats ark,t:cache/final.lats 2>cache/log/lattice_best_path.log
+<DecodeThread>: decode time is : 1053.000000 ms
+<MakeMfcc>: no segments file exists: assuming wav.scp indexed by utterance.
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:cache/exp/make_mfcc/test/wav_test.1.scp ark:cache/mfcc.ark 2>cache/log/compute-mfcc.log
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/copy-feats  --compress=true ark:cache/mfcc.ark ark,scp:cache/mfcc/test/raw_mfcc_test.1.ark,cache/mfcc/test/raw_mfcc_test.1.scp 2>cache/log/copy-feats.log
+<ComputeCmvnStats>: /home/firefly/lf_test/kaldi/src/featbin/compute-cmvn-stats --spk2utt=ark:cache/data/mfcc/test/spk2utt scp:cache/data/mfcc/test/feats.scp ark,scp:cache/mfcc/test/cmvn_test.ark,cache/mfcc/test/cmvn_test.scp 2>cache/log/compute_cmvn_stats.log
+<ComputeCmvnStats>: Succeeded creating CMVN stats for test
+<Decode>: feature type is lda
+<Decode>: /home/firefly/lf_test/kaldi/src/bin/am-info --print-args=false tri3b/final.mdl | grep pdfs | awk '{print $NF}' > cache/pdfs_in_model
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/apply-cmvn  --utt2spk=ark:cache/data/mfcc/test/split1/1/utt2spk scp:cache/data/mfcc/test/split1/1/cmvn.scp scp:cache/data/mfcc/test/split1/1/feats.scp ark:cache/apply-cmvn.ark 2>cache/log/apply_cmvn.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/splice-feats --left-context=3 --right-context=3 ark:cache/apply-cmvn.ark ark:cache/splice-feats.ark 2>cache/log/splice_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/transform-feats tri3b/final.mat ark:cache/splice-feats.ark ark:cache/trasform-feats.ark 2>cache/log/transform_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/gmmbin/gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=tri3b/graph_word/words.txt tri3b/final.mdl tri3b/graph_word/HCLG.fst ark:cache/trasform-feats.ark ark:- 1>tri3b/decode_test_word/lat.1 2>cache/log/gmm_latgen_faster.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-scale --inv-acoustic-scale=17 ark:tri3b/decode_test_word/lat.1 ark:cache/scaled.lats 2>cache/log/lattice_scale.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-add-penalty --word-ins-penalty=1.0 ark:cache/scaled.lats ark:cache/add.lats 2>cache/log/lattice_add_penalty.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-prune --beam=6 ark:cache/add.lats ark:cache/prune.lats 2>cache/log/latiice_prune.log
+<Decode>: scoring with word insertion penalty=1.0
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-best-path --word-symbol-table=tri3b/graph_word/words.txt ark:cache/prune.lats ark,t:cache/final.lats 2>cache/log/lattice_best_path.log
+<DecodeThread>: decode time is : 952.000000 ms
+<MakeMfcc>: no segments file exists: assuming wav.scp indexed by utterance.
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:cache/exp/make_mfcc/test/wav_test.1.scp ark:cache/mfcc.ark 2>cache/log/compute-mfcc.log
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/copy-feats  --compress=true ark:cache/mfcc.ark ark,scp:cache/mfcc/test/raw_mfcc_test.1.ark,cache/mfcc/test/raw_mfcc_test.1.scp 2>cache/log/copy-feats.log
+<ComputeCmvnStats>: /home/firefly/lf_test/kaldi/src/featbin/compute-cmvn-stats --spk2utt=ark:cache/data/mfcc/test/spk2utt scp:cache/data/mfcc/test/feats.scp ark,scp:cache/mfcc/test/cmvn_test.ark,cache/mfcc/test/cmvn_test.scp 2>cache/log/compute_cmvn_stats.log
+<ComputeCmvnStats>: Succeeded creating CMVN stats for test
+<Decode>: feature type is lda
+<Decode>: /home/firefly/lf_test/kaldi/src/bin/am-info --print-args=false tri3b/final.mdl | grep pdfs | awk '{print $NF}' > cache/pdfs_in_model
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/apply-cmvn  --utt2spk=ark:cache/data/mfcc/test/split1/1/utt2spk scp:cache/data/mfcc/test/split1/1/cmvn.scp scp:cache/data/mfcc/test/split1/1/feats.scp ark:cache/apply-cmvn.ark 2>cache/log/apply_cmvn.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/splice-feats --left-context=3 --right-context=3 ark:cache/apply-cmvn.ark ark:cache/splice-feats.ark 2>cache/log/splice_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/transform-feats tri3b/final.mat ark:cache/splice-feats.ark ark:cache/trasform-feats.ark 2>cache/log/transform_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/gmmbin/gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=tri3b/graph_word/words.txt tri3b/final.mdl tri3b/graph_word/HCLG.fst ark:cache/trasform-feats.ark ark:- 1>tri3b/decode_test_word/lat.1 2>cache/log/gmm_latgen_faster.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-scale --inv-acoustic-scale=17 ark:tri3b/decode_test_word/lat.1 ark:cache/scaled.lats 2>cache/log/lattice_scale.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-add-penalty --word-ins-penalty=1.0 ark:cache/scaled.lats ark:cache/add.lats 2>cache/log/lattice_add_penalty.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-prune --beam=6 ark:cache/add.lats ark:cache/prune.lats 2>cache/log/latiice_prune.log
+<Decode>: scoring with word insertion penalty=1.0
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-best-path --word-symbol-table=tri3b/graph_word/words.txt ark:cache/prune.lats ark,t:cache/final.lats 2>cache/log/lattice_best_path.log
+<DecodeThread>: decode time is : 1292.000000 ms
+<MakeMfcc>: no segments file exists: assuming wav.scp indexed by utterance.
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:cache/exp/make_mfcc/test/wav_test.1.scp ark:cache/mfcc.ark 2>cache/log/compute-mfcc.log
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/copy-feats  --compress=true ark:cache/mfcc.ark ark,scp:cache/mfcc/test/raw_mfcc_test.1.ark,cache/mfcc/test/raw_mfcc_test.1.scp 2>cache/log/copy-feats.log
+<ComputeCmvnStats>: /home/firefly/lf_test/kaldi/src/featbin/compute-cmvn-stats --spk2utt=ark:cache/data/mfcc/test/spk2utt scp:cache/data/mfcc/test/feats.scp ark,scp:cache/mfcc/test/cmvn_test.ark,cache/mfcc/test/cmvn_test.scp 2>cache/log/compute_cmvn_stats.log
+<ComputeCmvnStats>: Succeeded creating CMVN stats for test
+<Decode>: feature type is lda
+<Decode>: /home/firefly/lf_test/kaldi/src/bin/am-info --print-args=false tri3b/final.mdl | grep pdfs | awk '{print $NF}' > cache/pdfs_in_model
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/apply-cmvn  --utt2spk=ark:cache/data/mfcc/test/split1/1/utt2spk scp:cache/data/mfcc/test/split1/1/cmvn.scp scp:cache/data/mfcc/test/split1/1/feats.scp ark:cache/apply-cmvn.ark 2>cache/log/apply_cmvn.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/splice-feats --left-context=3 --right-context=3 ark:cache/apply-cmvn.ark ark:cache/splice-feats.ark 2>cache/log/splice_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/transform-feats tri3b/final.mat ark:cache/splice-feats.ark ark:cache/trasform-feats.ark 2>cache/log/transform_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/gmmbin/gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=tri3b/graph_word/words.txt tri3b/final.mdl tri3b/graph_word/HCLG.fst ark:cache/trasform-feats.ark ark:- 1>tri3b/decode_test_word/lat.1 2>cache/log/gmm_latgen_faster.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-scale --inv-acoustic-scale=17 ark:tri3b/decode_test_word/lat.1 ark:cache/scaled.lats 2>cache/log/lattice_scale.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-add-penalty --word-ins-penalty=1.0 ark:cache/scaled.lats ark:cache/add.lats 2>cache/log/lattice_add_penalty.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-prune --beam=6 ark:cache/add.lats ark:cache/prune.lats 2>cache/log/latiice_prune.log
+<Decode>: scoring with word insertion penalty=1.0
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-best-path --word-symbol-table=tri3b/graph_word/words.txt ark:cache/prune.lats ark,t:cache/final.lats 2>cache/log/lattice_best_path.log
+<DecodeThread>: decode time is : 1184.000000 ms
+<MakeMfcc>: no segments file exists: assuming wav.scp indexed by utterance.
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:cache/exp/make_mfcc/test/wav_test.1.scp ark:cache/mfcc.ark 2>cache/log/compute-mfcc.log
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/copy-feats  --compress=true ark:cache/mfcc.ark ark,scp:cache/mfcc/test/raw_mfcc_test.1.ark,cache/mfcc/test/raw_mfcc_test.1.scp 2>cache/log/copy-feats.log
+<ComputeCmvnStats>: /home/firefly/lf_test/kaldi/src/featbin/compute-cmvn-stats --spk2utt=ark:cache/data/mfcc/test/spk2utt scp:cache/data/mfcc/test/feats.scp ark,scp:cache/mfcc/test/cmvn_test.ark,cache/mfcc/test/cmvn_test.scp 2>cache/log/compute_cmvn_stats.log
+<ComputeCmvnStats>: Succeeded creating CMVN stats for test
+<Decode>: feature type is lda
+<Decode>: /home/firefly/lf_test/kaldi/src/bin/am-info --print-args=false tri3b/final.mdl | grep pdfs | awk '{print $NF}' > cache/pdfs_in_model
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/apply-cmvn  --utt2spk=ark:cache/data/mfcc/test/split1/1/utt2spk scp:cache/data/mfcc/test/split1/1/cmvn.scp scp:cache/data/mfcc/test/split1/1/feats.scp ark:cache/apply-cmvn.ark 2>cache/log/apply_cmvn.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/splice-feats --left-context=3 --right-context=3 ark:cache/apply-cmvn.ark ark:cache/splice-feats.ark 2>cache/log/splice_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/transform-feats tri3b/final.mat ark:cache/splice-feats.ark ark:cache/trasform-feats.ark 2>cache/log/transform_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/gmmbin/gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=tri3b/graph_word/words.txt tri3b/final.mdl tri3b/graph_word/HCLG.fst ark:cache/trasform-feats.ark ark:- 1>tri3b/decode_test_word/lat.1 2>cache/log/gmm_latgen_faster.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-scale --inv-acoustic-scale=17 ark:tri3b/decode_test_word/lat.1 ark:cache/scaled.lats 2>cache/log/lattice_scale.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-add-penalty --word-ins-penalty=1.0 ark:cache/scaled.lats ark:cache/add.lats 2>cache/log/lattice_add_penalty.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-prune --beam=6 ark:cache/add.lats ark:cache/prune.lats 2>cache/log/latiice_prune.log
+<Decode>: scoring with word insertion penalty=1.0
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-best-path --word-symbol-table=tri3b/graph_word/words.txt ark:cache/prune.lats ark,t:cache/final.lats 2>cache/log/lattice_best_path.log
+<DecodeThread>: decode time is : 1098.000000 ms
+<MakeMfcc>: no segments file exists: assuming wav.scp indexed by utterance.
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:cache/exp/make_mfcc/test/wav_test.1.scp ark:cache/mfcc.ark 2>cache/log/compute-mfcc.log
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/copy-feats  --compress=true ark:cache/mfcc.ark ark,scp:cache/mfcc/test/raw_mfcc_test.1.ark,cache/mfcc/test/raw_mfcc_test.1.scp 2>cache/log/copy-feats.log
+<ComputeCmvnStats>: /home/firefly/lf_test/kaldi/src/featbin/compute-cmvn-stats --spk2utt=ark:cache/data/mfcc/test/spk2utt scp:cache/data/mfcc/test/feats.scp ark,scp:cache/mfcc/test/cmvn_test.ark,cache/mfcc/test/cmvn_test.scp 2>cache/log/compute_cmvn_stats.log
+<ComputeCmvnStats>: Succeeded creating CMVN stats for test
+<Decode>: feature type is lda
+<Decode>: /home/firefly/lf_test/kaldi/src/bin/am-info --print-args=false tri3b/final.mdl | grep pdfs | awk '{print $NF}' > cache/pdfs_in_model
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/apply-cmvn  --utt2spk=ark:cache/data/mfcc/test/split1/1/utt2spk scp:cache/data/mfcc/test/split1/1/cmvn.scp scp:cache/data/mfcc/test/split1/1/feats.scp ark:cache/apply-cmvn.ark 2>cache/log/apply_cmvn.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/splice-feats --left-context=3 --right-context=3 ark:cache/apply-cmvn.ark ark:cache/splice-feats.ark 2>cache/log/splice_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/transform-feats tri3b/final.mat ark:cache/splice-feats.ark ark:cache/trasform-feats.ark 2>cache/log/transform_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/gmmbin/gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=tri3b/graph_word/words.txt tri3b/final.mdl tri3b/graph_word/HCLG.fst ark:cache/trasform-feats.ark ark:- 1>tri3b/decode_test_word/lat.1 2>cache/log/gmm_latgen_faster.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-scale --inv-acoustic-scale=17 ark:tri3b/decode_test_word/lat.1 ark:cache/scaled.lats 2>cache/log/lattice_scale.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-add-penalty --word-ins-penalty=1.0 ark:cache/scaled.lats ark:cache/add.lats 2>cache/log/lattice_add_penalty.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-prune --beam=6 ark:cache/add.lats ark:cache/prune.lats 2>cache/log/latiice_prune.log
+<Decode>: scoring with word insertion penalty=1.0
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-best-path --word-symbol-table=tri3b/graph_word/words.txt ark:cache/prune.lats ark,t:cache/final.lats 2>cache/log/lattice_best_path.log
+<DecodeThread>: decode time is : 1420.000000 ms
+<MakeMfcc>: no segments file exists: assuming wav.scp indexed by utterance.
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:cache/exp/make_mfcc/test/wav_test.1.scp ark:cache/mfcc.ark 2>cache/log/compute-mfcc.log
+<MakeMfcc>: /home/firefly/lf_test/kaldi/src/featbin/copy-feats  --compress=true ark:cache/mfcc.ark ark,scp:cache/mfcc/test/raw_mfcc_test.1.ark,cache/mfcc/test/raw_mfcc_test.1.scp 2>cache/log/copy-feats.log
+<ComputeCmvnStats>: /home/firefly/lf_test/kaldi/src/featbin/compute-cmvn-stats --spk2utt=ark:cache/data/mfcc/test/spk2utt scp:cache/data/mfcc/test/feats.scp ark,scp:cache/mfcc/test/cmvn_test.ark,cache/mfcc/test/cmvn_test.scp 2>cache/log/compute_cmvn_stats.log
+<ComputeCmvnStats>: Succeeded creating CMVN stats for test
+<Decode>: feature type is lda
+<Decode>: /home/firefly/lf_test/kaldi/src/bin/am-info --print-args=false tri3b/final.mdl | grep pdfs | awk '{print $NF}' > cache/pdfs_in_model
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/apply-cmvn  --utt2spk=ark:cache/data/mfcc/test/split1/1/utt2spk scp:cache/data/mfcc/test/split1/1/cmvn.scp scp:cache/data/mfcc/test/split1/1/feats.scp ark:cache/apply-cmvn.ark 2>cache/log/apply_cmvn.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/splice-feats --left-context=3 --right-context=3 ark:cache/apply-cmvn.ark ark:cache/splice-feats.ark 2>cache/log/splice_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/featbin/transform-feats tri3b/final.mat ark:cache/splice-feats.ark ark:cache/trasform-feats.ark 2>cache/log/transform_feats.log
+<Decode>: /home/firefly/lf_test/kaldi/src/gmmbin/gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=tri3b/graph_word/words.txt tri3b/final.mdl tri3b/graph_word/HCLG.fst ark:cache/trasform-feats.ark ark:- 1>tri3b/decode_test_word/lat.1 2>cache/log/gmm_latgen_faster.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-scale --inv-acoustic-scale=17 ark:tri3b/decode_test_word/lat.1 ark:cache/scaled.lats 2>cache/log/lattice_scale.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-add-penalty --word-ins-penalty=1.0 ark:cache/scaled.lats ark:cache/add.lats 2>cache/log/lattice_add_penalty.log
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-prune --beam=6 ark:cache/add.lats ark:cache/prune.lats 2>cache/log/latiice_prune.log
+<Decode>: scoring with word insertion penalty=1.0
+<Decode>: /home/firefly/lf_test/kaldi/src/latbin/lattice-best-path --word-symbol-table=tri3b/graph_word/words.txt ark:cache/prune.lats ark,t:cache/final.lats 2>cache/log/lattice_best_path.log
+<DecodeThread>: decode time is : 973.000000 ms

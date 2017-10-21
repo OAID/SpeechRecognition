@@ -1,0 +1,2 @@
+/home/firefly/lf_test/kaldi/src/featbin/compute-cmvn-stats --spk2utt=ark:cache/data/mfcc/test/spk2utt scp:cache/data/mfcc/test/feats.scp ark,scp:cache/mfcc/test/cmvn_test.ark,cache/mfcc/test/cmvn_test.scp 
+LOG (compute-cmvn-stats[5.2.122~2-8c792]:main():compute-cmvn-stats.cc:171) Done accumulating CMVN stats for 1 utterances; 0 had errors.

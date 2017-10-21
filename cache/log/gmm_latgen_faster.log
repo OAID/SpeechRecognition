@@ -1,0 +1,6 @@
+/home/firefly/lf_test/kaldi/src/gmmbin/gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=tri3b/graph_word/words.txt tri3b/final.mdl tri3b/graph_word/HCLG.fst ark:cache/trasform-feats.ark ark:- 
+Test-19 
+LOG (gmm-latgen-faster[5.2.122~2-8c792]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:286) Log-like per frame for utterance Test-19 is -4.63351 over 97 frames.
+LOG (gmm-latgen-faster[5.2.122~2-8c792]:main():gmm-latgen-faster.cc:176) Time taken 0.621249s: real-time factor assuming 100 frames/sec is 0.640463
+LOG (gmm-latgen-faster[5.2.122~2-8c792]:main():gmm-latgen-faster.cc:179) Done 1 utterances, failed for 0
+LOG (gmm-latgen-faster[5.2.122~2-8c792]:main():gmm-latgen-faster.cc:181) Overall log-likelihood per frame is -4.63351 over 97 frames.

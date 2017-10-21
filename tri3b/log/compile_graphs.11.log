@@ -1,0 +1,29 @@
+# compile-train-graphs --read-disambig-syms=data/lang/phones/disambig.int exp/tri3b/tree exp/tri3b/1.mdl data/lang/L.fst "ark:utils/sym2int.pl --map-oov 4 -f 2- data/lang/words.txt < data/mfcc/train/split12/11/text |" "ark:|gzip -c >exp/tri3b/fsts.11.gz" 
+# Started at Tue Oct 17 15:36:15 CST 2017
+#
+compile-train-graphs --read-disambig-syms=data/lang/phones/disambig.int exp/tri3b/tree exp/tri3b/1.mdl data/lang/L.fst 'ark:utils/sym2int.pl --map-oov 4 -f 2- data/lang/words.txt < data/mfcc/train/split12/11/text |' 'ark:|gzip -c >exp/tri3b/fsts.11.gz' 
+sym2int.pl: replacing <SIL> with 4
+sym2int.pl: replacing <SIL> with 4
+sym2int.pl: replacing <SIL> with 4
+sym2int.pl: replacing <SIL> with 4
+sym2int.pl: replacing <SIL> with 4
+sym2int.pl: replacing <SIL> with 4
+sym2int.pl: replacing <SIL> with 4
+sym2int.pl: replacing <SIL> with 4
+sym2int.pl: replacing <SIL> with 4
+sym2int.pl: replacing <SIL> with 4
+sym2int.pl: replacing <SIL> with 4
+sym2int.pl: replacing <SIL> with 4
+sym2int.pl: replacing <SIL> with 4
+sym2int.pl: replacing <SIL> with 4
+sym2int.pl: replacing <SIL> with 4
+sym2int.pl: replacing <SIL> with 4
+sym2int.pl: replacing <SIL> with 4
+sym2int.pl: replacing <SIL> with 4
+sym2int.pl: replacing <SIL> with 4
+sym2int.pl: replacing <SIL> with 4
+sym2int.pl: not warning for OOVs any more times
+** Replaced 83 instances of OOVs with 4
+LOG (compile-train-graphs[5.2.70~1-98bbe1]:main():compile-train-graphs.cc:147) compile-train-graphs: succeeded for 83 graphs, failed for 0
+# Accounting: time=1 threads=1
+# Ended (code 0) at Tue Oct 17 15:36:16 CST 2017, elapsed time 1 seconds

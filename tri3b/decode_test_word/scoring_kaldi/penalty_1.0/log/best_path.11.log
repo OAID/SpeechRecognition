@@ -1,0 +1,612 @@
+# lattice-scale --inv-acoustic-scale=11 "ark:gunzip -c exp/tri3b/decode_test_word/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=1.0 ark:- ark:- | lattice-best-path --word-symbol-table=exp/tri3b/graph_word/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- exp/tri3b/graph_word/words.txt | cat > exp/tri3b/decode_test_word/scoring_kaldi/penalty_1.0/11.txt 
+# Started at Tue Oct 17 15:46:38 CST 2017
+#
+lattice-add-penalty --word-ins-penalty=1.0 ark:- ark:- 
+lattice-best-path --word-symbol-table=exp/tri3b/graph_word/words.txt ark:- ark,t:- 
+lattice-scale --inv-acoustic-scale=11 'ark:gunzip -c exp/tri3b/decode_test_word/lat.*.gz|' ark:- 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0001, best cost 15.2314 + 929.12 = 944.351 over 198 frames.
+A003-0001 启动 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0002, best cost 15.9188 + 847.64 = 863.559 over 198 frames.
+A003-0002 关机 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0003, best cost 16.6207 + 884.408 = 901.029 over 198 frames.
+A003-0003 向左转 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0004, best cost 16.6795 + 914.979 = 931.659 over 198 frames.
+A003-0004 向右转 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0005, best cost 16.3168 + 885.093 = 901.41 over 198 frames.
+A003-0005 向后转 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0006, best cost 14.4539 + 825.877 = 840.331 over 198 frames.
+A003-0006 前进 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0007, best cost 15.1843 + 839.236 = 854.421 over 198 frames.
+A003-0007 后退 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0008, best cost 15.6037 + 834.949 = 850.553 over 198 frames.
+A003-0008 加速 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0009, best cost 15.7386 + 825.506 = 841.244 over 198 frames.
+A003-0009 减速 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0010, best cost 22.637 + 844.303 = 866.94 over 198 frames.
+A003-0010 七 零 四 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0011, best cost 14.9444 + 972.608 = 987.552 over 198 frames.
+A003-0011 旋转 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0012, best cost 15.0109 + 819.551 = 834.561 over 198 frames.
+A003-0012 跟随 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0013, best cost 14.0626 + 829.031 = 843.093 over 198 frames.
+A003-0013 前进 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0014, best cost 15.4039 + 881.98 = 897.383 over 198 frames.
+A003-0014 客厅 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0015, best cost 15.6046 + 885.321 = 900.926 over 198 frames.
+A003-0015 厨房 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0016, best cost 17.0394 + 886.364 = 903.403 over 198 frames.
+A003-0016 五 四 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0017, best cost 16.5591 + 927.797 = 944.356 over 198 frames.
+A003-0017 伸出手 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0018, best cost 16.4277 + 988.463 = 1004.89 over 198 frames.
+A003-0018 缩回手 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0019, best cost 15.2788 + 903.801 = 919.08 over 198 frames.
+A003-0019 握紧 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0020, best cost 16.3173 + 904.531 = 920.848 over 198 frames.
+A003-0020 松开手 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0021, best cost 18.0468 + 873.412 = 891.459 over 198 frames.
+A003-0021 七 七 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0022, best cost 15.6054 + 935.645 = 951.251 over 198 frames.
+A003-0022 拿起 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0023, best cost 15.5228 + 845.902 = 861.425 over 198 frames.
+A003-0023 放下 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0024, best cost 16.6525 + 906.531 = 923.184 over 198 frames.
+A003-0024 向左看 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0025, best cost 16.5769 + 863.215 = 879.792 over 198 frames.
+A003-0025 向右看 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0026, best cost 16.7562 + 897.756 = 914.512 over 198 frames.
+A003-0026 向上看 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0027, best cost 17.0038 + 834.399 = 851.403 over 198 frames.
+A003-0027 向下看 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0028, best cost 18.7024 + 886.878 = 905.58 over 198 frames.
+A003-0028 点头 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0029, best cost 15.7599 + 841.901 = 857.661 over 198 frames.
+A003-0029 摇头 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0030, best cost 17.1435 + 871.612 = 888.756 over 198 frames.
+A003-0030 进入菜单 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0031, best cost 16.4364 + 861.461 = 877.897 over 198 frames.
+A003-0031 上一项 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0032, best cost 16.5354 + 835.596 = 852.132 over 198 frames.
+A003-0032 下一项 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0033, best cost 14.9133 + 843.007 = 857.92 over 198 frames.
+A003-0033 确定 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0034, best cost 15.6604 + 816.32 = 831.981 over 198 frames.
+A003-0034 取消 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0035, best cost 15.4622 + 897.944 = 913.406 over 198 frames.
+A003-0035 返回 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0036, best cost 15.4419 + 799.699 = 815.141 over 198 frames.
+A003-0036 进入 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0037, best cost 17.2243 + 941.735 = 958.959 over 198 frames.
+A003-0037 查看帮助 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0038, best cost 17.2678 + 950.263 = 967.53 over 198 frames.
+A003-0038 状态查询 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0039, best cost 15.6224 + 801.223 = 816.846 over 198 frames.
+A003-0039 待机 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0040, best cost 15.0974 + 827.778 = 842.875 over 198 frames.
+A003-0040 充电 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0041, best cost 16.4961 + 938.112 = 954.608 over 198 frames.
+A003-0041 播放音乐 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0042, best cost 33.1826 + 1010.45 = 1043.63 over 198 frames.
+A003-0042 七 零 四 播放音乐 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0043, best cost 24.2305 + 970.51 = 994.74 over 198 frames.
+A003-0043 随机播放 四 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0044, best cost 17.7961 + 919.141 = 936.937 over 198 frames.
+A003-0044 单曲循环 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0045, best cost 17.4931 + 870.228 = 887.721 over 198 frames.
+A003-0045 列表循环 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0046, best cost 16.0964 + 888.213 = 904.31 over 198 frames.
+A003-0046 上一曲 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0047, best cost 22.1135 + 857.835 = 879.949 over 198 frames.
+A003-0047 下一曲 七 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0048, best cost 17.3098 + 847.508 = 864.818 over 198 frames.
+A003-0048 加大音量 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0049, best cost 17.5277 + 898.022 = 915.549 over 198 frames.
+A003-0049 减小音量 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0050, best cost 18.1203 + 909.859 = 927.979 over 198 frames.
+A003-0050 查询日历 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0051, best cost 17.7523 + 960.628 = 978.38 over 198 frames.
+A003-0051 查询日程 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0052, best cost 18.5185 + 900.086 = 918.604 over 198 frames.
+A003-0052 查询天气 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0053, best cost 16.2863 + 932.526 = 948.812 over 198 frames.
+A003-0053 查询闹钟 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0054, best cost 17.6942 + 873.544 = 891.238 over 198 frames.
+A003-0054 关闭闹钟 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0055, best cost 15.4603 + 832.261 = 847.721 over 198 frames.
+A003-0055 拍照 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0056, best cost 17.3482 + 907.07 = 924.418 over 198 frames.
+A003-0056 开始录像 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0057, best cost 17.1033 + 894.392 = 911.495 over 198 frames.
+A003-0057 停止录像 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0058, best cost 16.6722 + 862.158 = 878.83 over 198 frames.
+A003-0058 开始录音 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0059, best cost 16.9183 + 892.501 = 909.419 over 198 frames.
+A003-0059 停止录音 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0060, best cost 15.2003 + 781.154 = 796.355 over 198 frames.
+A003-0060 开门 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0061, best cost 15.2799 + 799.312 = 814.592 over 198 frames.
+A003-0061 关门 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0062, best cost 15.1362 + 812.538 = 827.674 over 198 frames.
+A003-0062 开灯 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0063, best cost 15.2039 + 835.382 = 850.586 over 198 frames.
+A003-0063 关灯 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0064, best cost 17.3484 + 851.446 = 868.794 over 198 frames.
+A003-0064 调高亮度 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0065, best cost 17.8622 + 828.565 = 846.427 over 198 frames.
+A003-0065 调低亮度 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0066, best cost 17.2274 + 889.573 = 906.8 over 198 frames.
+A003-0066 打开空调 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0067, best cost 17.8033 + 863.134 = 880.937 over 198 frames.
+A003-0067 关闭空调 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0068, best cost 17.4383 + 885.347 = 902.785 over 198 frames.
+A003-0068 调高温度 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0069, best cost 17.2957 + 869.758 = 887.054 over 198 frames.
+A003-0069 调低温度 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0070, best cost 22.4959 + 890.449 = 912.945 over 198 frames.
+A003-0070 四 五 四 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0071, best cost 17.3978 + 901.071 = 918.469 over 198 frames.
+A003-0071 辅热模式 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0072, best cost 17.0984 + 884.002 = 901.101 over 198 frames.
+A003-0072 换气模式 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0073, best cost 17.3961 + 954.821 = 972.217 over 198 frames.
+A003-0073 加大风速 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0074, best cost 17.7314 + 902.714 = 920.446 over 198 frames.
+A003-0074 减小风速 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0075, best cost 15.8464 + 808.312 = 824.158 over 198 frames.
+A003-0075 清扫 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0076, best cost 16.1305 + 878.371 = 894.502 over 198 frames.
+A003-0076 倒垃圾 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0077, best cost 16.1994 + 795.215 = 811.414 over 198 frames.
+A003-0077 洗衣服 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0078, best cost 16.217 + 778.932 = 795.149 over 198 frames.
+A003-0078 晾衣服 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0079, best cost 16.2553 + 849.173 = 865.429 over 198 frames.
+A003-0079 收衣服 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0080, best cost 15.6913 + 848.339 = 864.03 over 198 frames.
+A003-0080 整理 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0081, best cost 17.1926 + 888.927 = 906.12 over 198 frames.
+A003-0081 打开电视 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0082, best cost 17.6201 + 923.388 = 941.008 over 198 frames.
+A003-0082 关闭电视 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0083, best cost 16.501 + 852.98 = 869.481 over 198 frames.
+A003-0083 频道加 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0084, best cost 16.2597 + 894.779 = 911.039 over 198 frames.
+A003-0084 频道减 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0085, best cost 17.1803 + 874.021 = 891.201 over 198 frames.
+A003-0085 打开电脑 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0086, best cost 17.6018 + 897.944 = 915.546 over 198 frames.
+A003-0086 关闭电脑 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0087, best cost 16.9405 + 836.22 = 853.16 over 198 frames.
+A003-0087 接电话 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0088, best cost 15.5428 + 832.134 = 847.676 over 198 frames.
+A003-0088 拨电话 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0089, best cost 66.4779 + 1996.3 = 2062.78 over 498 frames.
+A003-0089 一 三 九 八 四 五 四 二 八 七 三 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0090, best cost 63.4814 + 2138.43 = 2201.92 over 498 frames.
+A003-0090 一 六 八 三 九 四 零 九 一 七 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0091, best cost 69.147 + 2186.24 = 2255.39 over 498 frames.
+A003-0091 零 一 零 三 四 八 二 零 一 五 九 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0092, best cost 68.0621 + 2094.52 = 2162.58 over 498 frames.
+A003-0092 零 二 一 五 六 三 二 四 三 一 四 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0093, best cost 70.5957 + 2120.78 = 2191.38 over 498 frames.
+A003-0093 一 八 七 八 零 七 五 六 三 八 一 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0094, best cost 69.2854 + 2024.99 = 2094.28 over 498 frames.
+A003-0094 一 四 三 六 五 三 二 九 二 四 零 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0095, best cost 70.164 + 2108.76 = 2178.92 over 498 frames.
+A003-0095 一 六 二 四 七 五 一 八 五 三 七 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0096, best cost 69.1532 + 2073.49 = 2142.64 over 498 frames.
+A003-0096 九 四 六 三 九 二 二 一 三 六 二 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0097, best cost 64.5311 + 1981.12 = 2045.65 over 498 frames.
+A003-0097 五 七 三 二 七 六 九 二 四 六 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0098, best cost 71.7305 + 2011.21 = 2082.94 over 498 frames.
+A003-0098 二 四 零 五 二 四 七 三 一 八 四 五 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0099, best cost 69.962 + 2062.25 = 2132.21 over 498 frames.
+A003-0099 四 三 二 九 七 二 六 三 八 零 一 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A003-0100, best cost 64.1584 + 1963.9 = 2028.05 over 498 frames.
+A003-0100 七 五 三 一 六 二 二 六 九 四 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0001, best cost 14.7995 + 937.179 = 951.978 over 191 frames.
+A012-0001 启动 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0002, best cost 21.8012 + 825.299 = 847.1 over 162 frames.
+A012-0002 零 关机 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0003, best cost 15.8799 + 723.224 = 739.103 over 136 frames.
+A012-0003 向左转 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0004, best cost 16.2007 + 955.665 = 971.865 over 190 frames.
+A012-0004 向右转 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0005, best cost 19.1045 + 1122.83 = 1141.94 over 194 frames.
+A012-0005 向后转 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0006, best cost 14.4323 + 969.793 = 984.225 over 189 frames.
+A012-0006 前进 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0007, best cost 17.8013 + 1085.02 = 1102.83 over 196 frames.
+A012-0007 开门 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0008, best cost 16.1502 + 843.984 = 860.134 over 167 frames.
+A012-0008 加速 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0009, best cost 16.8536 + 975.461 = 992.314 over 189 frames.
+A012-0009 减速 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0010, best cost 16.034 + 987.131 = 1003.17 over 189 frames.
+A012-0010 停止 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0011, best cost 14.5342 + 1114.14 = 1128.68 over 209 frames.
+A012-0011 前进 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0012, best cost 22.0596 + 998.479 = 1020.54 over 193 frames.
+A012-0012 跟随 五 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0013, best cost 14.3673 + 1021.23 = 1035.6 over 192 frames.
+A012-0013 前进 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0014, best cost 16.2942 + 950.768 = 967.062 over 185 frames.
+A012-0014 客厅 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0015, best cost 14.8819 + 794.743 = 809.625 over 165 frames.
+A012-0015 厨房 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0016, best cost 20.4657 + 975.941 = 996.407 over 193 frames.
+A012-0016 六 卧室 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0017, best cost 16.14 + 1011.3 = 1027.44 over 197 frames.
+A012-0017 伸出手 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0018, best cost 16.4807 + 1014.29 = 1030.77 over 191 frames.
+A012-0018 缩回手 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0019, best cost 20.7972 + 860.709 = 881.506 over 176 frames.
+A012-0019 六 握紧 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0020, best cost 16.6274 + 998.739 = 1015.37 over 205 frames.
+A012-0020 松开手 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0021, best cost 14.8747 + 895.229 = 910.104 over 186 frames.
+A012-0021 举起 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0022, best cost 15.3821 + 967.172 = 982.554 over 196 frames.
+A012-0022 拿起 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0023, best cost 15.3512 + 1041 = 1056.35 over 208 frames.
+A012-0023 放下 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0024, best cost 16.7775 + 1012.25 = 1029.03 over 202 frames.
+A012-0024 向左看 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0025, best cost 16.9889 + 1044.32 = 1061.31 over 212 frames.
+A012-0025 向右看 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0026, best cost 16.6199 + 1001.85 = 1018.47 over 209 frames.
+A012-0026 向上看 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0027, best cost 16.7813 + 1042.18 = 1058.96 over 218 frames.
+A012-0027 向下看 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0028, best cost 15.3157 + 914.881 = 930.197 over 189 frames.
+A012-0028 点头 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0029, best cost 15.1029 + 865.998 = 881.1 over 181 frames.
+A012-0029 摇头 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0030, best cost 18.0196 + 1106.98 = 1125 over 233 frames.
+A012-0030 进入菜单 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0031, best cost 16.2188 + 1121.41 = 1137.63 over 236 frames.
+A012-0031 上一项 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0032, best cost 16.0896 + 1047.23 = 1063.32 over 216 frames.
+A012-0032 上一项 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0033, best cost 14.8405 + 1026.84 = 1041.68 over 211 frames.
+A012-0033 确定 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0034, best cost 15.3481 + 938.417 = 953.765 over 197 frames.
+A012-0034 取消 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0035, best cost 14.9932 + 889.663 = 904.656 over 178 frames.
+A012-0035 返回 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0036, best cost 15.2889 + 826.824 = 842.113 over 181 frames.
+A012-0036 进入 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0037, best cost 18.5041 + 1094.53 = 1113.03 over 220 frames.
+A012-0037 查看帮助 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0038, best cost 18.2971 + 1098.81 = 1117.11 over 212 frames.
+A012-0038 状态查询 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0039, best cost 14.6558 + 846.7 = 861.356 over 182 frames.
+A012-0039 待机 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0040, best cost 15.379 + 904.169 = 919.548 over 177 frames.
+A012-0040 充电 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0041, best cost 17.2015 + 1253.69 = 1270.9 over 235 frames.
+A012-0041 播放音乐 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0042, best cost 19.4175 + 1407.35 = 1426.76 over 291 frames.
+A012-0042 停止播放音乐 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0043, best cost 17.6442 + 1122.42 = 1140.07 over 231 frames.
+A012-0043 随机播放 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0044, best cost 18.556 + 1146.5 = 1165.06 over 227 frames.
+A012-0044 单曲循环 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0045, best cost 17.855 + 1136.93 = 1154.79 over 229 frames.
+A012-0045 列表循环 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0046, best cost 15.4009 + 874.925 = 890.325 over 181 frames.
+A012-0046 下一曲 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0047, best cost 15.8856 + 923.203 = 939.089 over 195 frames.
+A012-0047 下一曲 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0048, best cost 18.0018 + 993.559 = 1011.56 over 205 frames.
+A012-0048 加大音量 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0049, best cost 18.0856 + 1174.47 = 1192.56 over 247 frames.
+A012-0049 减小音量 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0050, best cost 18.1332 + 1125.15 = 1143.29 over 222 frames.
+A012-0050 查询日历 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0051, best cost 18.1645 + 1165.24 = 1183.4 over 234 frames.
+A012-0051 查询日程 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0052, best cost 17.8548 + 1154.96 = 1172.81 over 225 frames.
+A012-0052 查询天气 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0053, best cost 17.347 + 1116.97 = 1134.32 over 229 frames.
+A012-0053 查询闹钟 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0054, best cost 17.1372 + 1023.02 = 1040.15 over 212 frames.
+A012-0054 关闭闹钟 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0055, best cost 21.9173 + 901.173 = 923.09 over 180 frames.
+A012-0055 五 拍照 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0056, best cost 20.271 + 1088.36 = 1108.63 over 220 frames.
+A012-0056 开始录像 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0057, best cost 17.5231 + 1198.68 = 1216.2 over 231 frames.
+A012-0057 停止录像 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0058, best cost 20.626 + 1119.72 = 1140.35 over 228 frames.
+A012-0058 开始录音 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0059, best cost 17.0832 + 1188.16 = 1205.25 over 248 frames.
+A012-0059 停止录音 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0060, best cost 14.469 + 782.068 = 796.537 over 168 frames.
+A012-0060 开门 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0061, best cost 15.0941 + 869.884 = 884.978 over 179 frames.
+A012-0061 关门 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0062, best cost 14.6385 + 968.352 = 982.99 over 212 frames.
+A012-0062 开灯 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0063, best cost 14.5348 + 968.092 = 982.627 over 199 frames.
+A012-0063 关门 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0064, best cost 17.1714 + 1221.76 = 1238.93 over 254 frames.
+A012-0064 调高亮度 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0065, best cost 17.3776 + 1055.03 = 1072.4 over 232 frames.
+A012-0065 调低亮度 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0066, best cost 17.519 + 932.663 = 950.182 over 195 frames.
+A012-0066 打开空调 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0067, best cost 18.1078 + 981.047 = 999.155 over 204 frames.
+A012-0067 关闭空调 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0068, best cost 17.4052 + 1129.78 = 1147.19 over 233 frames.
+A012-0068 调高温度 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0069, best cost 17.7074 + 1063.93 = 1081.64 over 221 frames.
+A012-0069 调低温度 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0070, best cost 16.7538 + 981.78 = 998.534 over 206 frames.
+A012-0070 制冷模式 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0071, best cost 16.9237 + 1115.71 = 1132.64 over 237 frames.
+A012-0071 辅热模式 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0072, best cost 16.9702 + 1136.8 = 1153.77 over 212 frames.
+A012-0072 换气模式 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0073, best cost 18.0172 + 1041.26 = 1059.27 over 216 frames.
+A012-0073 加大风速 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0074, best cost 17.7816 + 1157.66 = 1175.44 over 245 frames.
+A012-0074 减小风速 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0075, best cost 15.2284 + 827.743 = 842.971 over 171 frames.
+A012-0075 清扫 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0076, best cost 15.6791 + 926.991 = 942.67 over 197 frames.
+A012-0076 倒垃圾 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0077, best cost 16.1173 + 949.776 = 965.894 over 202 frames.
+A012-0077 洗衣服 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0078, best cost 16.3753 + 1152.63 = 1169.01 over 233 frames.
+A012-0078 晾衣服 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0079, best cost 16.2419 + 934.196 = 950.438 over 193 frames.
+A012-0079 收衣服 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0080, best cost 15.0856 + 858.923 = 874.008 over 179 frames.
+A012-0080 整理 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0081, best cost 17.2783 + 1107.48 = 1124.76 over 229 frames.
+A012-0081 打开电视 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0082, best cost 17.6585 + 1163.02 = 1180.68 over 245 frames.
+A012-0082 关闭电视 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0083, best cost 16.1858 + 944.738 = 960.924 over 203 frames.
+A012-0083 频道加 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0084, best cost 16.1698 + 998.117 = 1014.29 over 208 frames.
+A012-0084 频道减 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0085, best cost 17.0724 + 1013.26 = 1030.33 over 214 frames.
+A012-0085 打开电脑 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0086, best cost 17.4262 + 1018.94 = 1036.36 over 216 frames.
+A012-0086 关闭电脑 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0087, best cost 16.8079 + 1063.94 = 1080.75 over 218 frames.
+A012-0087 接电话 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0088, best cost 16.9139 + 1034.2 = 1051.11 over 210 frames.
+A012-0088 拨电话 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0089, best cost 65.7503 + 1868.85 = 1934.6 over 392 frames.
+A012-0089 一 三 九 八 四 五 四 二 八 七 三 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0090, best cost 67.9802 + 1939.35 = 2007.33 over 402 frames.
+A012-0090 一 六 八 二 三 九 四 零 九 一 七 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0091, best cost 66.6342 + 1924.24 = 1990.88 over 421 frames.
+A012-0091 零 一 零 三 四 八 二 零 一 五 九 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0092, best cost 64.2916 + 1799.33 = 1863.62 over 386 frames.
+A012-0092 零 二 一 五 六 三 二 四 三 一 四 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0093, best cost 65.5603 + 1844.8 = 1910.36 over 391 frames.
+A012-0093 一 八 七 二 零 七 五 六 三 八 一 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0094, best cost 67.5189 + 2090.74 = 2158.26 over 438 frames.
+A012-0094 一 四 三 六 五 三 八 九 二 四 零 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0095, best cost 66.4603 + 1974.54 = 2041 over 423 frames.
+A012-0095 一 零 二 四 七 五 一 八 五 三 七 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0096, best cost 67.0714 + 1955.93 = 2023 over 412 frames.
+A012-0096 九 四 六 三 七 二 八 一 三 六 二 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0097, best cost 66.5913 + 2138.55 = 2205.14 over 456 frames.
+A012-0097 五 七 三 八 七 六 九 八 二 四 六 
+LOG (lattice-scale[5.2.70~1-98bbe1]:main():lattice-scale.cc:90) Done 300 lattices.
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0098, best cost 64.2203 + 2049.85 = 2114.07 over 443 frames.
+A012-0098 二 四 零 二 四 七 三 一 八 四 五 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0099, best cost 68.8865 + 1954.65 = 2023.54 over 414 frames.
+A012-0099 四 三 二 九 七 一 六 三 八 零 一 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance A012-0100, best cost 61.2553 + 1952.04 = 2013.3 over 427 frames.
+A012-0100 七 五 三 一 六 八 二 六 九 四 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0001, best cost 12.5827 + 381.76 = 394.342 over 143 frames.
+B002-0001 启动 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0002, best cost 13.2814 + 446.39 = 459.672 over 146 frames.
+B002-0002 关机 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0003, best cost 14.2906 + 518.074 = 532.365 over 171 frames.
+B002-0003 向左转 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0004, best cost 14.0775 + 497.41 = 511.487 over 169 frames.
+B002-0004 向右转 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0005, best cost 14.1991 + 532.214 = 546.413 over 175 frames.
+B002-0005 向后转 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0006, best cost 12.0173 + 428.952 = 440.969 over 152 frames.
+B002-0006 前进 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0007, best cost 12.5425 + 431.374 = 443.917 over 144 frames.
+B002-0007 后退 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0008, best cost 12.9967 + 408.959 = 421.955 over 143 frames.
+B002-0008 加速 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0009, best cost 13.363 + 459.697 = 473.06 over 156 frames.
+B002-0009 减速 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0010, best cost 13.0244 + 447.003 = 460.028 over 148 frames.
+B002-0010 停止 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0011, best cost 12.7462 + 425.814 = 438.56 over 149 frames.
+B002-0011 旋转 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0012, best cost 12.5708 + 436.466 = 449.037 over 144 frames.
+B002-0012 跟随 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0013, best cost 11.4152 + 376.697 = 388.112 over 139 frames.
+B002-0013 前进 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0014, best cost 13.0215 + 480.415 = 493.437 over 148 frames.
+B002-0014 客厅 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0015, best cost 13.1122 + 449.569 = 462.681 over 158 frames.
+B002-0015 厨房 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0016, best cost 12.7814 + 351.497 = 364.279 over 138 frames.
+B002-0016 卧室 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0017, best cost 14.1994 + 570.677 = 584.877 over 186 frames.
+B002-0017 伸出手 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0018, best cost 14.3389 + 512.614 = 526.953 over 175 frames.
+B002-0018 缩回手 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0019, best cost 12.9492 + 392.002 = 404.951 over 138 frames.
+B002-0019 握紧 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0020, best cost 14.4457 + 594.116 = 608.562 over 176 frames.
+B002-0020 松开手 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0021, best cost 12.8903 + 441.531 = 454.422 over 140 frames.
+B002-0021 举起 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0022, best cost 12.7431 + 371.451 = 384.194 over 140 frames.
+B002-0022 拿起 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0023, best cost 12.9067 + 382.702 = 395.609 over 139 frames.
+B002-0023 放下 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0024, best cost 14.2238 + 463.631 = 477.855 over 165 frames.
+B002-0024 向左看 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0025, best cost 14.2564 + 530.841 = 545.098 over 176 frames.
+B002-0025 向右看 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0026, best cost 14.3403 + 564.593 = 578.934 over 168 frames.
+B002-0026 向上看 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0027, best cost 14.7756 + 537.419 = 552.195 over 182 frames.
+B002-0027 向下看 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0028, best cost 13.0844 + 393.189 = 406.273 over 152 frames.
+B002-0028 点头 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0029, best cost 13.0879 + 424.4 = 437.488 over 157 frames.
+B002-0029 摇头 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0030, best cost 15.179 + 580.014 = 595.193 over 190 frames.
+B002-0030 进入菜单 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0031, best cost 13.7875 + 497.994 = 511.781 over 165 frames.
+B002-0031 上一项 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0032, best cost 13.8444 + 594.294 = 608.138 over 168 frames.
+B002-0032 下一项 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0033, best cost 12.5672 + 411.157 = 423.724 over 142 frames.
+B002-0033 确定 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0034, best cost 13.1635 + 426.416 = 439.58 over 158 frames.
+B002-0034 取消 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0035, best cost 12.1893 + 527.396 = 539.585 over 165 frames.
+B002-0035 返回 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0036, best cost 12.8311 + 438.471 = 451.302 over 140 frames.
+B002-0036 进入 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0037, best cost 15.9573 + 660.473 = 676.43 over 199 frames.
+B002-0037 查看帮助 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0038, best cost 15.5881 + 797.675 = 813.263 over 204 frames.
+B002-0038 状态查询 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0039, best cost 13.1812 + 407.377 = 420.558 over 145 frames.
+B002-0039 待机 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0040, best cost 12.8992 + 447.965 = 460.864 over 144 frames.
+B002-0040 充电 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0041, best cost 14.2945 + 511.232 = 525.527 over 175 frames.
+B002-0041 播放音乐 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0042, best cost 16.6901 + 732.186 = 748.876 over 219 frames.
+B002-0042 停止播放音乐 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0043, best cost 15.0911 + 652.602 = 667.693 over 180 frames.
+B002-0043 随机播放 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0044, best cost 15.3906 + 621.773 = 637.164 over 197 frames.
+B002-0044 单曲循环 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0045, best cost 15.4264 + 622.473 = 637.9 over 202 frames.
+B002-0045 列表循环 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0046, best cost 14.0054 + 521.876 = 535.881 over 171 frames.
+B002-0046 上一曲 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0047, best cost 13.8423 + 530.325 = 544.168 over 165 frames.
+B002-0047 下一曲 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0048, best cost 15.1183 + 560.235 = 575.353 over 180 frames.
+B002-0048 加大音量 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0049, best cost 15.5164 + 575.028 = 590.544 over 187 frames.
+B002-0049 减小音量 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0050, best cost 15.2216 + 564.111 = 579.332 over 179 frames.
+B002-0050 查询日历 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0051, best cost 15.4366 + 603.965 = 619.402 over 193 frames.
+B002-0051 查询日程 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0052, best cost 15.3114 + 498.984 = 514.296 over 178 frames.
+B002-0052 查询天气 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0053, best cost 15.2823 + 541.123 = 556.405 over 183 frames.
+B002-0053 查询闹钟 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0054, best cost 15.1241 + 533.286 = 548.41 over 190 frames.
+B002-0054 关闭闹钟 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0055, best cost 13.1945 + 456.528 = 469.722 over 150 frames.
+B002-0055 拍照 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0056, best cost 14.7522 + 528.438 = 543.19 over 178 frames.
+B002-0056 开始录像 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0057, best cost 14.7342 + 515.787 = 530.521 over 178 frames.
+B002-0057 停止录像 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0058, best cost 14.8812 + 596.279 = 611.16 over 180 frames.
+B002-0058 开始录音 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0059, best cost 14.4926 + 539.238 = 553.731 over 176 frames.
+B002-0059 停止录音 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0060, best cost 12.7224 + 390.446 = 403.169 over 152 frames.
+B002-0060 开门 
+LOG (lattice-add-penalty[5.2.70~1-98bbe1]:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 300 lattices.
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0061, best cost 12.7012 + 368.62 = 381.322 over 147 frames.
+B002-0061 关门 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0062, best cost 12.4274 + 357.708 = 370.135 over 133 frames.
+B002-0062 开灯 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0063, best cost 12.5284 + 409.583 = 422.112 over 146 frames.
+B002-0063 关灯 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0064, best cost 15.5864 + 655.654 = 671.241 over 193 frames.
+B002-0064 调高亮度 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0065, best cost 15.5097 + 616.743 = 632.253 over 188 frames.
+B002-0065 调低亮度 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0066, best cost 14.9169 + 572.49 = 587.407 over 183 frames.
+B002-0066 打开空调 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0067, best cost 15.3222 + 569.951 = 585.273 over 197 frames.
+B002-0067 关闭空调 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0068, best cost 14.6751 + 569.819 = 584.494 over 176 frames.
+B002-0068 调高温度 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0069, best cost 14.9126 + 543.425 = 558.337 over 183 frames.
+B002-0069 调低温度 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0070, best cost 14.8601 + 604.419 = 619.279 over 192 frames.
+B002-0070 制冷模式 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0071, best cost 14.9437 + 549.144 = 564.087 over 183 frames.
+B002-0071 辅热模式 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0072, best cost 14.6079 + 589.573 = 604.181 over 177 frames.
+B002-0072 换气模式 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0073, best cost 15.0967 + 580.94 = 596.037 over 175 frames.
+B002-0073 加大风速 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0074, best cost 15.1059 + 561.138 = 576.243 over 179 frames.
+B002-0074 减小风速 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0075, best cost 13.0268 + 439.554 = 452.581 over 149 frames.
+B002-0075 清扫 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0076, best cost 14.0765 + 490.158 = 504.234 over 168 frames.
+B002-0076 倒垃圾 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0077, best cost 15.8312 + 620.038 = 635.869 over 177 frames.
+B002-0077 洗衣服 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0078, best cost 14.2508 + 465.22 = 479.47 over 163 frames.
+B002-0078 晾衣服 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0079, best cost 14.2104 + 527.387 = 541.597 over 181 frames.
+B002-0079 收衣服 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0080, best cost 12.8608 + 400.737 = 413.598 over 142 frames.
+B002-0080 整理 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0081, best cost 15.4696 + 606.084 = 621.554 over 191 frames.
+B002-0081 打开电视 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0082, best cost 15.4666 + 543.018 = 558.485 over 198 frames.
+B002-0082 关闭电视 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0083, best cost 14.191 + 561.114 = 575.305 over 177 frames.
+B002-0083 频道加 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0084, best cost 14.1562 + 638.004 = 652.161 over 178 frames.
+B002-0084 频道减 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0085, best cost 15.0475 + 565.67 = 580.717 over 189 frames.
+B002-0085 打开电脑 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0086, best cost 15.2417 + 522.868 = 538.11 over 186 frames.
+B002-0086 关闭电脑 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0087, best cost 14.3282 + 562.548 = 576.876 over 163 frames.
+B002-0087 接电话 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0088, best cost 14.0836 + 540.977 = 555.06 over 165 frames.
+B002-0088 拨电话 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0089, best cost 63.6101 + 1383.58 = 1447.19 over 398 frames.
+B002-0089 一 三 九 八 四 五 四 二 八 七 三 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0090, best cost 65.5554 + 1462.85 = 1528.41 over 405 frames.
+B002-0090 一 六 八 二 三 九 四 零 九 一 七 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0091, best cost 64.3721 + 1235.33 = 1299.7 over 349 frames.
+B002-0091 零 一 零 三 四 八 二 零 一 五 九 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0092, best cost 62.5224 + 1644.1 = 1706.63 over 386 frames.
+B002-0092 零 二 一 五 六 三 二 四 三 九 四 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0093, best cost 63.1001 + 1275.07 = 1338.17 over 366 frames.
+B002-0093 一 八 七 二 零 七 五 六 三 八 一 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0094, best cost 69.8924 + 1596.13 = 1666.02 over 392 frames.
+B002-0094 一 四 三 六 五 三 二 九 二 四 零 零 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0095, best cost 63.6498 + 1330.61 = 1394.26 over 407 frames.
+B002-0095 一 零 二 四 七 五 一 八 五 三 七 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0096, best cost 64.8111 + 1384.08 = 1448.89 over 392 frames.
+B002-0096 九 四 六 三 七 二 八 一 三 六 二 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0097, best cost 63.1858 + 1242.24 = 1305.43 over 363 frames.
+B002-0097 五 七 三 二 七 六 九 八 二 四 六 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0098, best cost 59.9994 + 1208.16 = 1268.16 over 361 frames.
+B002-0098 二 四 零 二 四 七 三 一 八 四 五 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0099, best cost 66.354 + 1605.42 = 1671.78 over 389 frames.
+B002-0099 四 三 二 九 七 二 六 三 八 零 一 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:99) For utterance B002-0100, best cost 64.4529 + 1595.64 = 1660.1 over 437 frames.
+B002-0100 七 五 三 一 六 八 二 二 六 九 四 
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:124) Overall cost per frame is 4.29162 = 0.0999337 [graph] + 4.19169 [acoustic] over 66033 frames.
+LOG (lattice-best-path[5.2.70~1-98bbe1]:main():lattice-best-path.cc:128) Done 300 lattices, failed for 0
+# Accounting: time=0 threads=1
+# Ended (code 0) at Tue Oct 17 15:46:38 CST 2017, elapsed time 0 seconds

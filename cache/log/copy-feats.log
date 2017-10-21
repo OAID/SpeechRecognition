@@ -1,0 +1,2 @@
+/home/firefly/lf_test/kaldi/src/featbin/copy-feats --compress=true ark:cache/mfcc.ark ark,scp:cache/mfcc/test/raw_mfcc_test.1.ark,cache/mfcc/test/raw_mfcc_test.1.scp 
+LOG (copy-feats[5.2.122~2-8c792]:main():copy-feats.cc:143) Copied 1 feature matrices.

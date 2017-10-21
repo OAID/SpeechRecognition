@@ -1,0 +1,25 @@
+# ali-to-post "ark:gunzip -c exp/tri3b/ali.1.gz|" ark:- | weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10:11:12:13:14:15:16:17:18:19:20 exp/tri3b/2.mdl ark:- ark:- | gmm-est-fmllr --fmllr-update-type=full --spk2utt=ark:data/mfcc/train/split12/1/spk2utt exp/tri3b/2.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/mfcc/train/split12/1/utt2spk scp:data/mfcc/train/split12/1/cmvn.scp scp:data/mfcc/train/split12/1/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri2b_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/mfcc/train/split12/1/utt2spk ark,s,cs:exp/tri3b/trans.1 ark:- ark:- |" ark:- ark:exp/tri3b/tmp_trans.1 
+# Started at Tue Oct 17 15:36:17 CST 2017
+#
+gmm-est-fmllr --fmllr-update-type=full --spk2utt=ark:data/mfcc/train/split12/1/spk2utt exp/tri3b/2.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/mfcc/train/split12/1/utt2spk scp:data/mfcc/train/split12/1/cmvn.scp scp:data/mfcc/train/split12/1/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri2b_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/mfcc/train/split12/1/utt2spk ark,s,cs:exp/tri3b/trans.1 ark:- ark:- |' ark:- ark:exp/tri3b/tmp_trans.1 
+ali-to-post 'ark:gunzip -c exp/tri3b/ali.1.gz|' ark:- 
+weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10:11:12:13:14:15:16:17:18:19:20 exp/tri3b/2.mdl ark:- ark:- 
+transform-feats exp/tri2b_ali/final.mat ark:- ark:- 
+transform-feats --utt2spk=ark:data/mfcc/train/split12/1/utt2spk ark,s,cs:exp/tri3b/trans.1 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/mfcc/train/split12/1/utt2spk scp:data/mfcc/train/split12/1/cmvn.scp scp:data/mfcc/train/split12/1/feats.scp ark:- 
+splice-feats --left-context=3 --right-context=3 ark:- ark:- 
+LOG (gmm-est-fmllr[5.2.70~1-98bbe1]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 2.3288 per frame over 7795 frames.
+LOG (gmm-est-fmllr[5.2.70~1-98bbe1]:main():gmm-est-fmllr.cc:143) For speaker A001, auxf-impr from fMLLR is 2.3288, over 7795 frames.
+LOG (ali-to-post[5.2.70~1-98bbe1]:main():ali-to-post.cc:73) Converted 150 alignments.
+LOG (weight-silence-post[5.2.70~1-98bbe1]:main():weight-silence-post.cc:95) Done 150 posteriors.
+LOG (apply-cmvn[5.2.70~1-98bbe1]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 150 utterances, errors on 0
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -86.479 over 35033 frames.
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:161) Applied transform to 150 utterances; 0 had errors.
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:158) Overall average logdet is 0.75757 over 35033 frames.
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:161) Applied transform to 150 utterances; 0 had errors.
+LOG (gmm-est-fmllr[5.2.70~1-98bbe1]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 2.09316 per frame over 10432 frames.
+LOG (gmm-est-fmllr[5.2.70~1-98bbe1]:main():gmm-est-fmllr.cc:143) For speaker A002, auxf-impr from fMLLR is 2.09316, over 10432 frames.
+LOG (gmm-est-fmllr[5.2.70~1-98bbe1]:main():gmm-est-fmllr.cc:188) Done 150 files, 0 with no posts, 0 with other errors.
+LOG (gmm-est-fmllr[5.2.70~1-98bbe1]:main():gmm-est-fmllr.cc:190) Overall fMLLR auxf impr per frame is 2.19394 over 18227 frames.
+# Accounting: time=1 threads=1
+# Ended (code 0) at Tue Oct 17 15:36:18 CST 2017, elapsed time 1 seconds

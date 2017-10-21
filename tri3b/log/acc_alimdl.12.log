@@ -1,0 +1,43 @@
+# ali-to-post "ark:gunzip -c exp/tri3b/ali.12.gz|" ark:- | gmm-acc-stats-twofeats exp/tri3b/35.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/mfcc/train/split12/12/utt2spk scp:data/mfcc/train/split12/12/cmvn.scp scp:data/mfcc/train/split12/12/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri2b_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/mfcc/train/split12/12/utt2spk ark:exp/tri3b/trans.12 ark:- ark:- |" "ark,s,cs:apply-cmvn  --utt2spk=ark:data/mfcc/train/split12/12/utt2spk scp:data/mfcc/train/split12/12/cmvn.scp scp:data/mfcc/train/split12/12/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri2b_ali/final.mat ark:- ark:- |" ark,s,cs:- exp/tri3b/35.12.acc 
+# Started at Tue Oct 17 15:43:56 CST 2017
+#
+ali-to-post 'ark:gunzip -c exp/tri3b/ali.12.gz|' ark:- 
+gmm-acc-stats-twofeats exp/tri3b/35.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/mfcc/train/split12/12/utt2spk scp:data/mfcc/train/split12/12/cmvn.scp scp:data/mfcc/train/split12/12/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri2b_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/mfcc/train/split12/12/utt2spk ark:exp/tri3b/trans.12 ark:- ark:- |' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/mfcc/train/split12/12/utt2spk scp:data/mfcc/train/split12/12/cmvn.scp scp:data/mfcc/train/split12/12/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri2b_ali/final.mat ark:- ark:- |' ark,s,cs:- exp/tri3b/35.12.acc 
+transform-feats --utt2spk=ark:data/mfcc/train/split12/12/utt2spk ark:exp/tri3b/trans.12 ark:- ark:- 
+splice-feats --left-context=3 --right-context=3 ark:- ark:- 
+transform-feats exp/tri2b_ali/final.mat ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/mfcc/train/split12/12/utt2spk scp:data/mfcc/train/split12/12/cmvn.scp scp:data/mfcc/train/split12/12/feats.scp ark:- 
+apply-cmvn --utt2spk=ark:data/mfcc/train/split12/12/utt2spk scp:data/mfcc/train/split12/12/cmvn.scp scp:data/mfcc/train/split12/12/feats.scp ark:- 
+splice-feats --left-context=3 --right-context=3 ark:- ark:- 
+transform-feats exp/tri2b_ali/final.mat ark:- ark:- 
+LOG (gmm-acc-stats-twofeats[5.2.70~1-98bbe1]:main():gmm-acc-stats-twofeats.cc:140) Average like for this file is -42.6018 over 1393 frames.
+LOG (gmm-acc-stats-twofeats[5.2.70~1-98bbe1]:main():gmm-acc-stats-twofeats.cc:140) Average like for this file is -34.3906 over 3127 frames.
+LOG (gmm-acc-stats-twofeats[5.2.70~1-98bbe1]:main():gmm-acc-stats-twofeats.cc:140) Average like for this file is -36.5308 over 338 frames.
+LOG (gmm-acc-stats-twofeats[5.2.70~1-98bbe1]:main():gmm-acc-stats-twofeats.cc:140) Average like for this file is -32.0211 over 1132 frames.
+LOG (gmm-acc-stats-twofeats[5.2.70~1-98bbe1]:main():gmm-acc-stats-twofeats.cc:140) Average like for this file is -27.97 over 4238 frames.
+LOG (ali-to-post[5.2.70~1-98bbe1]:main():ali-to-post.cc:73) Converted 16 alignments.
+LOG (gmm-acc-stats-twofeats[5.2.70~1-98bbe1]:main():gmm-acc-stats-twofeats.cc:140) Average like for this file is -32.7325 over 1132 frames.
+LOG (gmm-acc-stats-twofeats[5.2.70~1-98bbe1]:main():gmm-acc-stats-twofeats.cc:140) Average like for this file is -30.4788 over 701 frames.
+LOG (gmm-acc-stats-twofeats[5.2.70~1-98bbe1]:main():gmm-acc-stats-twofeats.cc:140) Average like for this file is -54.0822 over 202 frames.
+LOG (apply-cmvn[5.2.70~1-98bbe1]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 16 utterances, errors on 0
+LOG (gmm-acc-stats-twofeats[5.2.70~1-98bbe1]:main():gmm-acc-stats-twofeats.cc:140) Average like for this file is -37.8491 over 565 frames.
+LOG (apply-cmvn[5.2.70~1-98bbe1]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 16 utterances, errors on 0
+LOG (gmm-acc-stats-twofeats[5.2.70~1-98bbe1]:main():gmm-acc-stats-twofeats.cc:140) Average like for this file is -36.1466 over 746 frames.
+LOG (gmm-acc-stats-twofeats[5.2.70~1-98bbe1]:main():gmm-acc-stats-twofeats.cc:146) Avg like per frame so far is -33.2776
+LOG (gmm-acc-stats-twofeats[5.2.70~1-98bbe1]:main():gmm-acc-stats-twofeats.cc:140) Average like for this file is -42.4568 over 225 frames.
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -86.479 over 15253 frames.
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:161) Applied transform to 16 utterances; 0 had errors.
+LOG (gmm-acc-stats-twofeats[5.2.70~1-98bbe1]:main():gmm-acc-stats-twofeats.cc:140) Average like for this file is -34.2115 over 565 frames.
+LOG (gmm-acc-stats-twofeats[5.2.70~1-98bbe1]:main():gmm-acc-stats-twofeats.cc:140) Average like for this file is -38.2135 over 124 frames.
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:158) Overall average logdet is 0 over 15253 frames.
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:161) Applied transform to 16 utterances; 0 had errors.
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -86.479 over 15253 frames.
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:161) Applied transform to 16 utterances; 0 had errors.
+LOG (gmm-acc-stats-twofeats[5.2.70~1-98bbe1]:main():gmm-acc-stats-twofeats.cc:140) Average like for this file is -30.5384 over 429 frames.
+LOG (gmm-acc-stats-twofeats[5.2.70~1-98bbe1]:main():gmm-acc-stats-twofeats.cc:140) Average like for this file is -47.7235 over 145 frames.
+LOG (gmm-acc-stats-twofeats[5.2.70~1-98bbe1]:main():gmm-acc-stats-twofeats.cc:140) Average like for this file is -31.0982 over 191 frames.
+LOG (gmm-acc-stats-twofeats[5.2.70~1-98bbe1]:main():gmm-acc-stats-twofeats.cc:150) Done 16 files, 0 with no posteriors, 0 with no second features, 0 with other errors.
+LOG (gmm-acc-stats-twofeats[5.2.70~1-98bbe1]:main():gmm-acc-stats-twofeats.cc:155) Overall avg like per frame (Gaussian only) = -33.5207 over 15253 frames.
+LOG (gmm-acc-stats-twofeats[5.2.70~1-98bbe1]:main():gmm-acc-stats-twofeats.cc:163) Written accs.
+# Accounting: time=2 threads=1
+# Ended (code 0) at Tue Oct 17 15:43:58 CST 2017, elapsed time 2 seconds

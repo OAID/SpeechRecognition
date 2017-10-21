@@ -1,0 +1,2 @@
+/home/firefly/lf_test/kaldi/src/latbin/lattice-scale --inv-acoustic-scale=17 ark:tri3b/decode_test_word/lat.1 ark:cache/scaled.lats 
+LOG (lattice-scale[5.2.122~2-8c792]:main():lattice-scale.cc:90) Done 1 lattices.

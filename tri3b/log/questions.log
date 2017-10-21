@@ -1,0 +1,8 @@
+cluster-phones exp/tri3b/treeacc data/lang/phones/sets.int exp/tri3b/questions.int 
+WARNING (cluster-phones[5.2.70~1-98bbe1]:AutomaticallyObtainQuestions():build-tree.cc:628) AutomaticallyObtainQuestions: no stats available for phone set: 41 42 43 44 
+WARNING (cluster-phones[5.2.70~1-98bbe1]:AutomaticallyObtainQuestions():build-tree.cc:628) AutomaticallyObtainQuestions: no stats available for phone set: 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 
+WARNING (cluster-phones[5.2.70~1-98bbe1]:AutomaticallyObtainQuestions():build-tree.cc:628) AutomaticallyObtainQuestions: no stats available for phone set: 417 418 419 420 421 422 423 424 425 426 427 428 429 430 431 432 433 434 435 436 
+WARNING (cluster-phones[5.2.70~1-98bbe1]:AutomaticallyObtainQuestions():build-tree.cc:628) AutomaticallyObtainQuestions: no stats available for phone set: 565 566 567 568 
+WARNING (cluster-phones[5.2.70~1-98bbe1]:AutomaticallyObtainQuestions():build-tree.cc:628) AutomaticallyObtainQuestions: no stats available for phone set: 653 654 655 656 657 658 659 660 661 662 663 664 665 666 667 668 669 670 671 672 
+WARNING (cluster-phones[5.2.70~1-98bbe1]:AutomaticallyObtainQuestions():build-tree.cc:628) AutomaticallyObtainQuestions: no stats available for phone set: 713 714 715 716 717 718 719 720 721 722 723 724 725 726 727 728 
+LOG (cluster-phones[5.2.70~1-98bbe1]:main():cluster-phones.cc:129) Wrote questions to exp/tri3b/questions.int

@@ -1,0 +1,102 @@
+<LAUGH> <LAUGH> LAU_S
+<NO_SPOKEN_NOISE> <NO_SPOKEN_NOISE> NSN_S
+<SILENCE> <SILENCE> SIL_S
+<SPOKEN_NOISE> <SPOKEN_NOISE> SPN_S
+<eps> <eps> SIL
+一 一 ii_B i1_E
+七 七 q_B i1_E
+三 三 s_B an1_E
+上一曲 上一曲 sh_B ang4_I ii_I i1_I q_I v3_E
+上一项 上一项 sh_B ang4_I ii_I i2_I x_I iang4_E
+下一曲 下一曲 x_B ia4_I ii_I i1_I q_I v3_E
+下一项 下一项 x_B ia4_I ii_I i2_I x_I iang4_E
+举起 举起 j_B v2_I q_I i3_E
+九 九 j_B iu3_E
+二 二 ee_B er4_E
+五 五 uu_B u3_E
+伸出手 伸出手 sh_B en1_I ch_I u1_I sh_I ou3_E
+倒垃圾 倒垃圾 d_B ao4_I l_I a1_I j_I i5_E
+停止 停止 t_B ing2_I zh_I ix3_E
+停止录像 停止录像 t_B ing2_I zh_I ix3_I l_I u4_I x_I iang4_E
+停止录音 停止录音 t_B ing2_I zh_I ix3_I l_I u4_I ii_I in1_E
+停止播放音乐 停止播放音乐 t_B ing2_I zh_I ix3_I b_I o1_I f_I ang4_I ii_I in1_I vv_I ve4_E
+充电 充电 ch_B ong1_I d_I ian4_E
+八 八 b_B a1_E
+六 六 l_B iu4_E
+关机 关机 g_B uan1_I j_I i1_E
+关灯 关灯 g_B uan1_I d_I eng1_E
+关门 关门 g_B uan1_I m_I en2_E
+关闭电脑 关闭电脑 g_B uan1_I b_I i4_I d_I ian4_I n_I ao3_E
+关闭电视 关闭电视 g_B uan1_I b_I i4_I d_I ian4_I sh_I ix4_E
+关闭空调 关闭空调 g_B uan1_I b_I i4_I k_I ong1_I t_I iao2_E
+关闭闹钟 关闭闹钟 g_B uan1_I b_I i4_I n_I ao4_I zh_I ong1_E
+减小音量 减小音量 j_B ian3_I x_I iao3_I ii_I in1_I l_I iang4_E
+减小风速 减小风速 j_B ian3_I x_I iao3_I f_I eng1_I s_I u4_E
+减速 减速 j_B ian3_I s_I u4_E
+列表循环 列表循环 l_B ie4_I b_I iao3_I x_I vn2_I h_I uan2_E
+制冷模式 制冷模式 zh_B ix4_I l_I eng3_I m_I o2_I sh_I ix4_E
+前进 前进 q_B ian2_I j_I in4_E
+加大音量 加大音量 j_B ia1_I d_I a4_I ii_I in1_I l_I iang4_E
+加大风速 加大风速 j_B ia1_I d_I a4_I f_I eng1_I s_I u4_E
+加速 加速 j_B ia1_I s_I u4_E
+单曲循环 单曲循环 d_B an1_I q_I v3_I x_I vn2_I h_I uan2_E
+卧室 卧室 uu_B uo4_I sh_I ix4_E
+厨房 厨房 ch_B u2_I f_I ang2_E
+取消 取消 q_B v3_I x_I iao1_E
+后退 后退 h_B ou4_I t_I ui4_E
+向上看 向上看 x_B iang4_I sh_I ang4_I k_I an4_E
+向下看 向下看 x_B iang4_I x_I ia4_I k_I an4_E
+向右看 向右看 x_B iang4_I h_I ou4_I k_I an4_E
+向右转 向右转 x_B iang4_I ii_I iu4_I zh_I uan3_E
+向后转 向后转 x_B iang4_I h_I ou4_I zh_I uan3_E
+向左看 向左看 x_B iang4_I z_I uo3_I k_I an4_E
+向左转 向左转 x_B iang4_I z_I uo3_I zh_I uan3_E
+启动 启动 q_B i3_I d_I ong4_E
+四 四 s_B iy4_E
+客厅 客厅 k_B e4_I t_I ing1_E
+开始录像 开始录像 k_B ai1_I sh_I i3_I l_I u4_I x_I iang4_E
+开始录音 开始录音 k_B ai1_I sh_I i3_I l_I u4_I ii_I in1_E
+开灯 开灯 k_B ai1_I d_I eng1_E
+开门 开门 k_B ai1_I m_I en2_E
+待机 待机 d_B ai4_I j_I i1_E
+打开电脑 打开电脑 d_B a3_I k_I ai1_I d_I ian4_I n_I ao3_E
+打开电视 打开电视 d_B a3_I k_I ai1_I d_I ian4_I sh_I ix4_E
+打开空调 打开空调 d_B a3_I k_I ai1_I k_I ong1_I t_I iao2_E
+拍照 拍照 p_B ai1_I zh_I ao4_E
+拨电话 拨电话 b_B o1_I d_I ian4_I h_I ua4_E
+拿起 拿起 n_B a2_I q_I i3_E
+换气模式 换气模式 h_B uan4_I q_I i4_I m_I o2_I sh_I ix4_E
+接电话 接电话 j_B ie1_I d_I ian4_I h_I ua4_E
+握紧 握紧 uu_B uo4_I j_I in3_E
+摇头 摇头 ii_B iao2_I t_I ou2_E
+播放音乐 播放音乐 b_B o1_I f_I ang4_I ii_I in1_I vv_I ve4_E
+收衣服 收衣服 sh_B ou1_I ii_I i1_I f_I u5_E
+放下 放下 f_B ang4_I x_I ia4_E
+整理 整理 zh_B eng2_I l_I i3_E
+旋转 旋转 x_B van2_I zh_I uan3_E
+晾衣服 晾衣服 l_B iang4_I ii_I i1_I f_I u5_E
+松开手 松开手 s_B ong1_I k_I ai1_I sh_I ou3_E
+查看帮助 查看帮助 ch_B a2_I k_I an4_I b_I ang1_I zh_I u4_E
+查询天气 查询天气 ch_B a2_I x_I vn2_I t_I ian1_I q_I i4_E
+查询日历 查询日历 ch_B a2_I x_I vn2_I r_I iz4_I l_I i4_E
+查询日程 查询日程 ch_B a2_I x_I vn2_I r_I iz4_I ch_I eng2_E
+查询闹钟 查询闹钟 ch_B a2_I x_I vn2_I n_I ao4_I zh_I ong1_E
+洗衣服 洗衣服 x_B i3_I ii_I i1_I f_I u5_E
+清扫 清扫 q_B ing1_I s_I ao3_E
+点头 点头 d_B ian3_I t_I ou2_E
+状态查询 状态查询 zh_B uang4_I t_I ai4_I ch_I a2_I x_I vn2_E
+确定 确定 q_B ve4_I d_I ing4_E
+缩回手 缩回手 s_B uo1_I h_I ui2_I sh_I ou3_E
+调低亮度 调低亮度 t_B iao2_I d_I i1_I l_I iang4_I d_I u4_E
+调低温度 调低温度 t_B iao2_I d_I i1_I uu_I un1_I d_I u4_E
+调高亮度 调高亮度 t_B iao2_I g_I ao1_I l_I iang4_I d_I u4_E
+调高温度 调高温度 t_B iao2_I g_I ao1_I uu_I un1_I d_I u4_E
+跟随 跟随 g_B en1_I s_I ui2_E
+辅热模式 辅热模式 f_B u3_I r_I e4_I m_I o2_I sh_I ix4_E
+返回 返回 f_B an3_I h_I ui2_E
+进入 进入 j_B in4_I r_I u4_E
+进入菜单 进入菜单 j_B in4_I r_I u4_I c_I ai4_I d_I an1_E
+随机播放 随机播放 s_B ui2_I j_I i1_I b_I o1_I f_I ang4_E
+零 零 l_B ing2_E
+频道减 频道减 p_B in2_I d_I ao4_I j_I ian3_E
+频道加 频道加 p_B in2_I d_I ao4_I j_I ia1_E

@@ -1,0 +1,42 @@
+# gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false "gmm-boost-silence --boost=1.0 1 exp/tri3b/10.mdl - |" "ark:gunzip -c exp/tri3b/fsts.9.gz|" "ark,s,cs:apply-cmvn  --utt2spk=ark:data/mfcc/train/split12/9/utt2spk scp:data/mfcc/train/split12/9/cmvn.scp scp:data/mfcc/train/split12/9/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri2b_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/mfcc/train/split12/9/utt2spk ark:exp/tri3b/trans.9 ark:- ark:- |" "ark:|gzip -c >exp/tri3b/ali.9.gz" 
+# Started at Tue Oct 17 15:36:33 CST 2017
+#
+gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false 'gmm-boost-silence --boost=1.0 1 exp/tri3b/10.mdl - |' 'ark:gunzip -c exp/tri3b/fsts.9.gz|' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/mfcc/train/split12/9/utt2spk scp:data/mfcc/train/split12/9/cmvn.scp scp:data/mfcc/train/split12/9/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri2b_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/mfcc/train/split12/9/utt2spk ark:exp/tri3b/trans.9 ark:- ark:- |' 'ark:|gzip -c >exp/tri3b/ali.9.gz' 
+gmm-boost-silence --boost=1.0 1 exp/tri3b/10.mdl - 
+WARNING (gmm-boost-silence[5.2.70~1-98bbe1]:main():gmm-boost-silence.cc:82) The pdfs for the silence phones may be shared by other phones (note: this probably does not matter.)
+LOG (gmm-boost-silence[5.2.70~1-98bbe1]:main():gmm-boost-silence.cc:93) Boosted weights for 5 pdfs, by factor of 1
+LOG (gmm-boost-silence[5.2.70~1-98bbe1]:main():gmm-boost-silence.cc:103) Wrote model to -
+transform-feats --utt2spk=ark:data/mfcc/train/split12/9/utt2spk ark:exp/tri3b/trans.9 ark:- ark:- 
+transform-feats exp/tri2b_ali/final.mat ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/mfcc/train/split12/9/utt2spk scp:data/mfcc/train/split12/9/cmvn.scp scp:data/mfcc/train/split12/9/feats.scp ark:- 
+splice-feats --left-context=3 --right-context=3 ark:- ark:- 
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) C001-0003
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) C001-0004
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) C001-0006
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) C001-0009
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) C001-0010
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) C001-0011
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) C001-0013
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) C001-0015
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) C001-0016
+LOG (apply-cmvn[5.2.70~1-98bbe1]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 20 utterances, errors on 0
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) C001-0017
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) C001-0018
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) C001-0021
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) C001-0022
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) C001-0023
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) C001-0025
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) C001-0028
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) C001-0029
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -86.479 over 11076 frames.
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) C001-0030
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) C001-0031
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:158) Overall average logdet is 0 over 11076 frames.
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:161) Applied transform to 20 utterances; 0 had errors.
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) C001-0034
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:135) Overall log-likelihood per frame is -50.9289 over 11076 frames.
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:137) Retried 0 out of 20 utterances.
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:139) Done 20, errors on 0
+# Accounting: time=2 threads=1
+# Ended (code 0) at Tue Oct 17 15:36:35 CST 2017, elapsed time 2 seconds

@@ -1,0 +1,4 @@
+/home/firefly/lf_test/kaldi/src/latbin/lattice-prune --beam=6 ark:cache/add.lats ark:cache/prune.lats 
+LOG (lattice-prune[5.2.122~2-8c792]:main():lattice-prune.cc:95) For utterance Test-19, pruned #states from 1 to 1 and #arcs from 0 to 0
+LOG (lattice-prune[5.2.122~2-8c792]:main():lattice-prune.cc:104) Overall, pruned from on average 1 to 1 states, and from 0 to 0 arcs, over 1 utterances.
+LOG (lattice-prune[5.2.122~2-8c792]:main():lattice-prune.cc:108) Done 1 lattices.

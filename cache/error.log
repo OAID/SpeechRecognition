@@ -1,0 +1,1 @@
+<Decode>: /home/lin/kaldi/src/featbin/apply-cmvn  --utt2spk=ark:cache/data/mfcc/test/split1/1/utt2spk scp:cache/data/mfcc/test/split1/1/cmvn.scp scp:cache/data/mfcc/test/split1/1/feats.scp ark:cache/apply-cmvn.ark 2>cache/log/apply_cmvn.log call in terminal failed.

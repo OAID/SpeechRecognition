@@ -1,0 +1,18 @@
+# gmm-acc-stats-ali exp/tri3b/1.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/mfcc/train/split12/10/utt2spk scp:data/mfcc/train/split12/10/cmvn.scp scp:data/mfcc/train/split12/10/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri2b_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/mfcc/train/split12/10/utt2spk ark,s,cs:exp/tri3b/trans.10 ark:- ark:- |" "ark,s,cs:gunzip -c exp/tri3b/ali.10.gz|" exp/tri3b/1.10.acc 
+# Started at Tue Oct 17 15:36:16 CST 2017
+#
+gmm-acc-stats-ali exp/tri3b/1.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/mfcc/train/split12/10/utt2spk scp:data/mfcc/train/split12/10/cmvn.scp scp:data/mfcc/train/split12/10/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri2b_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/mfcc/train/split12/10/utt2spk ark,s,cs:exp/tri3b/trans.10 ark:- ark:- |' 'ark,s,cs:gunzip -c exp/tri3b/ali.10.gz|' exp/tri3b/1.10.acc 
+transform-feats --utt2spk=ark:data/mfcc/train/split12/10/utt2spk ark,s,cs:exp/tri3b/trans.10 ark:- ark:- 
+transform-feats exp/tri2b_ali/final.mat ark:- ark:- 
+splice-feats --left-context=3 --right-context=3 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/mfcc/train/split12/10/utt2spk scp:data/mfcc/train/split12/10/cmvn.scp scp:data/mfcc/train/split12/10/feats.scp ark:- 
+LOG (apply-cmvn[5.2.70~1-98bbe1]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 16 utterances, errors on 0
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -86.479 over 33362 frames.
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:161) Applied transform to 16 utterances; 0 had errors.
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:158) Overall average logdet is 0 over 33362 frames.
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:161) Applied transform to 16 utterances; 0 had errors.
+LOG (gmm-acc-stats-ali[5.2.70~1-98bbe1]:main():gmm-acc-stats-ali.cc:112) Done 16 files, 0 with errors.
+LOG (gmm-acc-stats-ali[5.2.70~1-98bbe1]:main():gmm-acc-stats-ali.cc:115) Overall avg like per frame (Gaussian only) = -42.4613 over 33362 frames.
+LOG (gmm-acc-stats-ali[5.2.70~1-98bbe1]:main():gmm-acc-stats-ali.cc:123) Written accs.
+# Accounting: time=0 threads=1
+# Ended (code 0) at Tue Oct 17 15:36:16 CST 2017, elapsed time 0 seconds

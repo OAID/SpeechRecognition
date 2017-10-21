@@ -1,0 +1,4 @@
+/home/firefly/lf_test/kaldi/src/featbin/compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:cache/exp/make_mfcc/test/wav_test.1.scp ark:cache/mfcc.ark 
+WARNING (compute-mfcc-feats[5.2.122~2-8c792]:main():compute-mfcc-feats.cc:116) Channel not specified but you have data with 2 channels; defaulting to zero
+VLOG[2] (compute-mfcc-feats[5.2.122~2-8c792]:main():compute-mfcc-feats.cc:173) Processed features for key Test-19
+LOG (compute-mfcc-feats[5.2.122~2-8c792]:main():compute-mfcc-feats.cc:176)  Done 1 out of 1 utterances.

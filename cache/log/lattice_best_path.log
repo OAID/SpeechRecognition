@@ -1,0 +1,5 @@
+/home/firefly/lf_test/kaldi/src/latbin/lattice-best-path --word-symbol-table=tri3b/graph_word/words.txt ark:cache/prune.lats ark,t:cache/final.lats 
+LOG (lattice-best-path[5.2.122~2-8c792]:main():lattice-best-path.cc:99) For utterance Test-19, best cost 6.51275 + 312.663 = 319.176 over 97 frames.
+Test-19 
+LOG (lattice-best-path[5.2.122~2-8c792]:main():lattice-best-path.cc:124) Overall cost per frame is 3.29047 = 0.0671418 [graph] + 3.22333 [acoustic] over 97 frames.
+LOG (lattice-best-path[5.2.122~2-8c792]:main():lattice-best-path.cc:128) Done 1 lattices, failed for 0

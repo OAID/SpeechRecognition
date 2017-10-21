@@ -1,0 +1,105 @@
+# gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false "gmm-boost-silence --boost=1.0 1 exp/tri3b/20.mdl - |" "ark:gunzip -c exp/tri3b/fsts.11.gz|" "ark,s,cs:apply-cmvn  --utt2spk=ark:data/mfcc/train/split12/11/utt2spk scp:data/mfcc/train/split12/11/cmvn.scp scp:data/mfcc/train/split12/11/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri2b_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/mfcc/train/split12/11/utt2spk ark:exp/tri3b/trans.11 ark:- ark:- |" "ark:|gzip -c >exp/tri3b/ali.11.gz" 
+# Started at Tue Oct 17 15:38:04 CST 2017
+#
+gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false 'gmm-boost-silence --boost=1.0 1 exp/tri3b/20.mdl - |' 'ark:gunzip -c exp/tri3b/fsts.11.gz|' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/mfcc/train/split12/11/utt2spk scp:data/mfcc/train/split12/11/cmvn.scp scp:data/mfcc/train/split12/11/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri2b_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/mfcc/train/split12/11/utt2spk ark:exp/tri3b/trans.11 ark:- ark:- |' 'ark:|gzip -c >exp/tri3b/ali.11.gz' 
+gmm-boost-silence --boost=1.0 1 exp/tri3b/20.mdl - 
+WARNING (gmm-boost-silence[5.2.70~1-98bbe1]:main():gmm-boost-silence.cc:82) The pdfs for the silence phones may be shared by other phones (note: this probably does not matter.)
+LOG (gmm-boost-silence[5.2.70~1-98bbe1]:main():gmm-boost-silence.cc:93) Boosted weights for 5 pdfs, by factor of 1
+LOG (gmm-boost-silence[5.2.70~1-98bbe1]:main():gmm-boost-silence.cc:103) Wrote model to -
+transform-feats --utt2spk=ark:data/mfcc/train/split12/11/utt2spk ark:exp/tri3b/trans.11 ark:- ark:- 
+splice-feats --left-context=3 --right-context=3 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/mfcc/train/split12/11/utt2spk scp:data/mfcc/train/split12/11/cmvn.scp scp:data/mfcc/train/split12/11/feats.scp ark:- 
+transform-feats exp/tri2b_ali/final.mat ark:- ark:- 
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0002
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0003
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0005
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0007
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0008
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0009
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0012
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0013
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0015
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0017
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0019
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0020
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0023
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0024
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0025
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0026
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0027
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0029
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0031
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0032
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0033
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0036
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0037
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0038
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0042
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0043
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0044
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0045
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0048
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0049
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0050
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0053
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0054
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0056
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0057
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0059
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0060
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0061
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0063
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0066
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0067
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0068
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0069
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0072
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0073
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0074
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0077
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0078
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0079
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0081
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0083
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0084
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0085
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0087
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0089
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0090
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0091
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0093
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0095
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0096
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0099
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0101
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0102
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0103
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0104
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0107
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0108
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0109
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0111
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0114
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0116
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0117
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0118
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0121
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0122
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0123
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0126
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0127
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0128
+LOG (apply-cmvn[5.2.70~1-98bbe1]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 83 utterances, errors on 0
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0130
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0132
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0133
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -86.479 over 79624 frames.
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:161) Applied transform to 83 utterances; 0 had errors.
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:127) E001-0134
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:158) Overall average logdet is 0 over 79624 frames.
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:161) Applied transform to 83 utterances; 0 had errors.
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:135) Overall log-likelihood per frame is -36.3247 over 79624 frames.
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:137) Retried 0 out of 83 utterances.
+LOG (gmm-align-compiled[5.2.70~1-98bbe1]:main():gmm-align-compiled.cc:139) Done 83, errors on 0
+# Accounting: time=28 threads=1
+# Ended (code 0) at Tue Oct 17 15:38:32 CST 2017, elapsed time 28 seconds

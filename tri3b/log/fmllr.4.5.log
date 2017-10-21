@@ -1,0 +1,23 @@
+# ali-to-post "ark:gunzip -c exp/tri3b/ali.5.gz|" ark:- | weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10:11:12:13:14:15:16:17:18:19:20 exp/tri3b/4.mdl ark:- ark:- | gmm-est-fmllr --fmllr-update-type=full --spk2utt=ark:data/mfcc/train/split12/5/spk2utt exp/tri3b/4.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/mfcc/train/split12/5/utt2spk scp:data/mfcc/train/split12/5/cmvn.scp scp:data/mfcc/train/split12/5/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri2b_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/mfcc/train/split12/5/utt2spk ark:exp/tri3b/trans.5 ark:- ark:- |" ark:- ark:exp/tri3b/tmp_trans.5 
+# Started at Tue Oct 17 15:36:20 CST 2017
+#
+ali-to-post 'ark:gunzip -c exp/tri3b/ali.5.gz|' ark:- 
+weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10:11:12:13:14:15:16:17:18:19:20 exp/tri3b/4.mdl ark:- ark:- 
+gmm-est-fmllr --fmllr-update-type=full --spk2utt=ark:data/mfcc/train/split12/5/spk2utt exp/tri3b/4.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/mfcc/train/split12/5/utt2spk scp:data/mfcc/train/split12/5/cmvn.scp scp:data/mfcc/train/split12/5/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri2b_ali/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/mfcc/train/split12/5/utt2spk ark:exp/tri3b/trans.5 ark:- ark:- |' ark:- ark:exp/tri3b/tmp_trans.5 
+apply-cmvn --utt2spk=ark:data/mfcc/train/split12/5/utt2spk scp:data/mfcc/train/split12/5/cmvn.scp scp:data/mfcc/train/split12/5/feats.scp ark:- 
+splice-feats --left-context=3 --right-context=3 ark:- ark:- 
+transform-feats --utt2spk=ark:data/mfcc/train/split12/5/utt2spk ark:exp/tri3b/trans.5 ark:- ark:- 
+transform-feats exp/tri2b_ali/final.mat ark:- ark:- 
+LOG (ali-to-post[5.2.70~1-98bbe1]:main():ali-to-post.cc:73) Converted 75 alignments.
+LOG (weight-silence-post[5.2.70~1-98bbe1]:main():weight-silence-post.cc:95) Done 75 posteriors.
+LOG (apply-cmvn[5.2.70~1-98bbe1]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 75 utterances, errors on 0
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -86.479 over 14238 frames.
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:161) Applied transform to 75 utterances; 0 had errors.
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:158) Overall average logdet is 3.5025 over 14238 frames.
+LOG (transform-feats[5.2.70~1-98bbe1]:main():transform-feats.cc:161) Applied transform to 75 utterances; 0 had errors.
+LOG (gmm-est-fmllr[5.2.70~1-98bbe1]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 0.256883 per frame over 9028 frames.
+LOG (gmm-est-fmllr[5.2.70~1-98bbe1]:main():gmm-est-fmllr.cc:143) For speaker A015, auxf-impr from fMLLR is 0.256883, over 9028 frames.
+LOG (gmm-est-fmllr[5.2.70~1-98bbe1]:main():gmm-est-fmllr.cc:188) Done 75 files, 0 with no posts, 0 with other errors.
+LOG (gmm-est-fmllr[5.2.70~1-98bbe1]:main():gmm-est-fmllr.cc:190) Overall fMLLR auxf impr per frame is 0.256883 over 9028 frames.
+# Accounting: time=1 threads=1
+# Ended (code 0) at Tue Oct 17 15:36:21 CST 2017, elapsed time 1 seconds

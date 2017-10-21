@@ -1,0 +1,2 @@
+/home/firefly/lf_test/kaldi/src/latbin/lattice-add-penalty --word-ins-penalty=1.0 ark:cache/scaled.lats ark:cache/add.lats 
+LOG (lattice-add-penalty[5.2.122~2-8c792]:main():lattice-add-penalty.cc:62) Done adding word insertion penalty to 1 lattices.

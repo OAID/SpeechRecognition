@@ -1,0 +1,3 @@
+/home/firefly/lf_test/kaldi/src/featbin/transform-feats tri3b/final.mat ark:cache/splice-feats.ark ark:cache/trasform-feats.ark 
+LOG (transform-feats[5.2.122~2-8c792]:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -86.479 over 97 frames.
+LOG (transform-feats[5.2.122~2-8c792]:main():transform-feats.cc:161) Applied transform to 1 utterances; 0 had errors.

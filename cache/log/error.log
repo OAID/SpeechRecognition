@@ -1,0 +1,1 @@
+<Decode>: /home/lin/kaldi/src/gmmbin/gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=tri1/graph_word/words.txt tri1/final.mdl tri1/graph_word/HCLG.fst ark:cache/add-delta.ark ark:- 1>tri1/decode_test_word/lat.1 2>cache/log/gmm_latgen_faster.log call in terminal failed.
