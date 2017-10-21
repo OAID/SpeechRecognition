@@ -10,7 +10,7 @@ The release version is 0.1.0, is based on [Rockchip RK3399](http://www.rock-chip
 ### Documents
 * [Installation instructions](installation.md)
 * [Performance Report PDF](performance_report.pdf)
-* [Support Commands](command_list.md)
+* [Supported Commands](command_list.md)
 
 
 # Release History
