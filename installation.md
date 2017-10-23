@@ -21,16 +21,7 @@ cd alsa-lib-1.1.4.1 && ./configure
 make && make install
 ```
 
-* Install Kaldi:
-```
-git clone https://github.com/kaldi-asr/kaldi.git
-cd kaldi/tools
-make –j 4
-cd ../src
-./configure
-make depend
-make -j 4
-```
+## Corss compile Kaldi:
 The whole Kaldi is too big for firefly-3399, so cross compiling is recommended. 
 ### In x86 linxu:
 * Install cross compile toolchain.
