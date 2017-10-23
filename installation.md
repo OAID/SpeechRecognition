@@ -63,7 +63,7 @@ cd ../src
 make
 ```
 ### In firefly-3399:
-*Creat directory and copy necessary executable files from x64.
+* Creat directory and copy necessary executable files from x64.
 ```
 sudo mkdir -p kaldi/src/{featbin,bin,gmmbin,latbin}
 sudo scp {usr_name}@{usr_IP}:{path_to_corss_compiled_kaldi}/src/bin/am-info kaldi/src/bin/
