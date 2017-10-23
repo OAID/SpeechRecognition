@@ -13,6 +13,13 @@ cd zlib-1.2.11
 make
 sudo make install
 ```
+* Install alsa-lib:
+```
+wget ftp://ftp.alsa-project.org/pub/lib/alsa-lib-1.1.4.1.tar.bz2
+tar -jxvf alsa-lib-1.1.4.1.tar
+cd alsa-lib-1.1.4.1 && ./configure
+make && make install
+```
 
 * Install Kaldi:
 ```
@@ -26,7 +33,8 @@ make -j 4
 ```
 
 The whole Kaldi is too big for firefly-3399, so cross compiling is recommended. 
-In x86 linxu, install cross compile toolchain.
+In x86 linxu:
+*install cross compile toolchain.
 ```
 sudo apt-get install gcc-arm-linux-gnueabihf -y
 sudo apt-get install g++-arm-linux-gnueabihf -y
@@ -38,12 +46,12 @@ sudo apt-get -y install gfortran-aarch64-linux-gnu g++-aarch64-linux-gnu
 sudo apt-get install gcc-arm-linux-gnueabi binutils-arm-linux-gnueabi -y
 sudo apt-get install g++-arm-linux-gnueabi gfortran-arm-linux-gnueabi -y
 ```
-Download Kaldi.
+*Download Kaldi.
 ```
 git clone https://github.com/kaldi-asr/kaldi.git
 cd kaldi/tools
 ```
-Modify Makefile.
+*Modify Makefile.
 ```
 -CXX = g++
 -CC = gcc         # used for sph2pipe
@@ -51,28 +59,22 @@ Modify Makefile.
 +CXX = aarch64-linux-gnu-g++-5
 +CC = aarch64-linux-gnu-gcc-5          # used for sph2pipe
 ```
-Cross compile
+*Cross compile.
 ```
 make -j4
 cd ../src
 ./configure --static --static-fst --openblas-root=../tools/OpenBLAS/install/ --host=aarch64-linux-gnu --use-cuda=no
 make
-``
-In firefly-3399, creat directory and copy necessary executable files from x64.
+```
+
+In firefly-3399:
+*Creat directory and copy necessary executable files from x64.
 ```
 sudo mkdir -p kaldi/src/{featbin,bin,gmmbin,latbin}
 sudo scp {usr_name}@{usr_IP}:{path_to_corss_compiled_kaldi}/src/bin/am-info kaldi/src/bin/
 sudo scp {usr_name}@{usr_IP}:{path_to_corss_compiled_kaldi}/src/featbin/{add-deltas,apply-cmvn,compute-cmvn-stats,compute-mfcc-feats,copy-feats,modify-cmvn-stats,splice-feats,transform-feats} kaldi/src/featbin/
 sudo scp {usr_name}@{usr_IP}:{path_to_corss_compiled_kaldi}/src/gmmbin/gmm-latgen-faster kaldi/src/gmmbin
 sudo scp {usr_name}@{usr_IP}:{path_to_corss_compiled_kaldi}/src/latbin/{lattice-add-penalty,lattice-best-path,lattice-mbr-decode,lattice-prune,lattice-scale} kaldi/src/latbin/
-```
-
-* Install alsa-lib:
-```
-wget ftp://ftp.alsa-project.org/pub/lib/alsa-lib-1.1.4.1.tar.bz2
-tar -jxvf alsa-lib-1.1.4.1.tar
-cd alsa-lib-1.1.4.1 && ./configure
-make && make install
 ```
 
 ## SpeechRecognition Compile
