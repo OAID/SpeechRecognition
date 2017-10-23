@@ -4,13 +4,13 @@
 
 * Install zlib:
 	sudo apt-get install libtool autoconf wget perl subversion build-essential 
-		sudo apt-get install gfortran libatlas-dev  libatlas-base-dev git
-		sudo wget http://www.zlib.net/zlib-1.2.11.tar.gz
-		tar zxvf zlib-1.2.11.tar.gz
-		cd zlib-1.2.11
-		./configure
-		make
-		sudo make install
+	sudo apt-get install gfortran libatlas-dev  libatlas-base-dev git
+	sudo wget http://www.zlib.net/zlib-1.2.11.tar.gz
+	tar zxvf zlib-1.2.11.tar.gz
+	cd zlib-1.2.11
+	./configure
+	make
+	sudo make install
 
 * Install alsa-lib:
 		wget ftp://ftp.alsa-project.org/pub/lib/alsa-lib-1.1.4.1.tar.bz2
