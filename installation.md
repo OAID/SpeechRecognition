@@ -3,7 +3,7 @@
 ## Install dependencies:
 
 * Install zlib:
-		sudo apt-get install libtool autoconf wget perl subversion build-essential 
+	sudo apt-get install libtool autoconf wget perl subversion build-essential 
 		sudo apt-get install gfortran libatlas-dev  libatlas-base-dev git
 		sudo wget http://www.zlib.net/zlib-1.2.11.tar.gz
 		tar zxvf zlib-1.2.11.tar.gz
