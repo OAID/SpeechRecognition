@@ -38,10 +38,8 @@ The whole Kaldi is too big for firefly-3399, so cross compiling is recommended.
 sudo apt-get install gcc-arm-linux-gnueabihf -y
 sudo apt-get install g++-arm-linux-gnueabihf -y
 sudo apt-get install gfortran-arm-linux-gnueabihf -y
-
 sudo apt-get install gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu  -y
 sudo apt-get -y install gfortran-aarch64-linux-gnu g++-aarch64-linux-gnu
-
 sudo apt-get install gcc-arm-linux-gnueabi binutils-arm-linux-gnueabi -y
 sudo apt-get install g++-arm-linux-gnueabi gfortran-arm-linux-gnueabi -y
 ```
