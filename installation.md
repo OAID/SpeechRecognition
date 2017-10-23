@@ -52,7 +52,6 @@ cd kaldi/tools
 ```
 -CXX = g++
 -CC = gcc         # used for sph2pipe
-
 +CXX = aarch64-linux-gnu-g++-5
 +CC = aarch64-linux-gnu-gcc-5          # used for sph2pipe
 ```
