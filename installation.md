@@ -61,10 +61,10 @@ export USR_NAME="host_name_in_x86_64"
 export USR_IPADD="IP_address_in_x86_64"
 export KALDI_PATH="absolute_path_of_corss_compiled_Kaldi_in_x86_64"
 sudo mkdir -p kaldi/src/{featbin,bin,gmmbin,latbin}
-sudo scp {USR_NAME}@{USR_IPADD}:{KALDI_PATH}/src/bin/am-info kaldi/src/bin/
-sudo scp {USR_NAME}@{USR_IPADD}:{KALDI_PATH}/src/featbin/{add-deltas,apply-cmvn,compute-cmvn-stats,compute-mfcc-feats,copy-feats,modify-cmvn-stats,splice-feats,transform-feats} kaldi/src/featbin/
-sudo scp {USR_NAME}@{USR_IPADD}:{KALDI_PATH}/src/gmmbin/gmm-latgen-faster kaldi/src/gmmbin
-sudo scp {USR_NAME}@{USR_IPADD}:{KALDI_PATH}/src/latbin/{lattice-add-penalty,lattice-best-path,lattice-mbr-decode,lattice-prune,lattice-scale} kaldi/src/latbin/
+sudo scp ${USR_NAME}@${USR_IPADD}:${KALDI_PATH}/src/bin/am-info kaldi/src/bin/
+sudo scp ${USR_NAME}@${USR_IPADD}:${KALDI_PATH}/src/featbin/{add-deltas,apply-cmvn,compute-cmvn-stats,compute-mfcc-feats,copy-feats,modify-cmvn-stats,splice-feats,transform-feats} kaldi/src/featbin/
+sudo scp ${USR_NAME}@${USR_IPADD}:${KALDI_PATH}/src/gmmbin/gmm-latgen-faster kaldi/src/gmmbin
+sudo scp ${USR_NAME}@${USR_IPADD}:${KALDI_PATH}/src/latbin/{lattice-add-penalty,lattice-best-path,lattice-mbr-decode,lattice-prune,lattice-scale} kaldi/src/latbin/
 ```
 
 ## SpeechRecognition Compile
