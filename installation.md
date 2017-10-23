@@ -13,6 +13,7 @@
 	make
 	sudo make install
 ```
+
 * Install alsa-lib:
 ```
 	wget ftp://ftp.alsa-project.org/pub/lib/alsa-lib-1.1.4.1.tar.bz2
