@@ -23,7 +23,7 @@ make && make install
 
 ## Corss compile Kaldi:
 The whole Kaldi is too big for firefly-3399, so cross compiling is recommended. 
-### In x86 linxu:
+### In x86_64 linxu:
 * Install cross compile toolchain.
 ```
 sudo apt-get install gcc-arm-linux-gnueabihf -y
@@ -55,13 +55,16 @@ make
 ```
 
 ### In firefly-3399:
-* Creat directory and copy necessary executable files from x64.
+* Creat directory and copy necessary executable files from x86_64.
 ```
+export USR_NAME="host_name_in_x86_64"
+export USR_IPADD="IP_address_in_x86_64"
+export KALDI_PATH="absolute_path_of_corss_compiled_Kaldi_in_x86_64"
 sudo mkdir -p kaldi/src/{featbin,bin,gmmbin,latbin}
-sudo scp {usr_name}@{usr_IP}:{path_to_corss_compiled_kaldi}/src/bin/am-info kaldi/src/bin/
-sudo scp {usr_name}@{usr_IP}:{path_to_corss_compiled_kaldi}/src/featbin/{add-deltas,apply-cmvn,compute-cmvn-stats,compute-mfcc-feats,copy-feats,modify-cmvn-stats,splice-feats,transform-feats} kaldi/src/featbin/
-sudo scp {usr_name}@{usr_IP}:{path_to_corss_compiled_kaldi}/src/gmmbin/gmm-latgen-faster kaldi/src/gmmbin
-sudo scp {usr_name}@{usr_IP}:{path_to_corss_compiled_kaldi}/src/latbin/{lattice-add-penalty,lattice-best-path,lattice-mbr-decode,lattice-prune,lattice-scale} kaldi/src/latbin/
+sudo scp {USR_NAME}@{USR_IPADD}:{KALDI_PATH}/src/bin/am-info kaldi/src/bin/
+sudo scp {USR_NAME}@{USR_IPADD}:{KALDI_PATH}/src/featbin/{add-deltas,apply-cmvn,compute-cmvn-stats,compute-mfcc-feats,copy-feats,modify-cmvn-stats,splice-feats,transform-feats} kaldi/src/featbin/
+sudo scp {USR_NAME}@{USR_IPADD}:{KALDI_PATH}/src/gmmbin/gmm-latgen-faster kaldi/src/gmmbin
+sudo scp {USR_NAME}@{USR_IPADD}:{KALDI_PATH}/src/latbin/{lattice-add-penalty,lattice-best-path,lattice-mbr-decode,lattice-prune,lattice-scale} kaldi/src/latbin/
 ```
 
 ## SpeechRecognition Compile
