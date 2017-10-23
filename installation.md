@@ -53,6 +53,7 @@ cd ../src
 ./configure --static --static-fst --openblas-root=../tools/OpenBLAS/install/ --host=aarch64-linux-gnu --use-cuda=no
 make
 ```
+
 ### In firefly-3399:
 * Creat directory and copy necessary executable files from x64.
 ```
