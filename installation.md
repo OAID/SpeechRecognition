@@ -33,8 +33,8 @@ make -j 4
 ```
 
 The whole Kaldi is too big for firefly-3399, so cross compiling is recommended. 
-In x86 linxu:
-*install cross compile toolchain.
+### In x86 linxu:
+*Install cross compile toolchain.
 ```
 sudo apt-get install gcc-arm-linux-gnueabihf -y
 sudo apt-get install g++-arm-linux-gnueabihf -y
@@ -67,7 +67,7 @@ cd ../src
 make
 ```
 
-In firefly-3399:
+### In firefly-3399:
 *Creat directory and copy necessary executable files from x64.
 ```
 sudo mkdir -p kaldi/src/{featbin,bin,gmmbin,latbin}
