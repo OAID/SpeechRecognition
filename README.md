@@ -4,7 +4,7 @@
 
 SpeechRecognition is a project that is maintained by **OPEN** AI LAB, it uses alsa(Advanced Linux Sound Architecture) (http://www.alsa-project.org/) to record sound and Kaldi(http://kaldi-asr.org/) to continous commands recognition. 
 
-The release version is 0.1.0, is based on [Rockchip RK3399](http://www.rock-chips.com/plus/3399.html) Platform, target OS is Ubuntu 16.04. Can download the source code from [OAID/CaffeOnACL](https://github.com/OAID/SpeechRecognition)
+The release version is 0.1.0, is based on [Rockchip RK3399](http://www.rock-chips.com/plus/3399.html) Platform, target OS is Ubuntu 16.04. 
 
 
 ### Documents
