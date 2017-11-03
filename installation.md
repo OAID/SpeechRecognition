@@ -80,7 +80,7 @@ The whole Kaldi is too big for firefly-3399, so cross compiling is recommended.
 ## SpeechRecognition Compile
 Modify SpeechRecognition/conf/config.hpp, change the KALDI_ROOT to Kaldi root directory in your computer and GRAPH_DIR to model graph director in which the HCLG.fst is. Except the path, there are some other options which have same funtions in Kaldi. To achive a better accuracy, you should adjust the microphone's gain to a proper level.
 ```
-	git clone gitlab@219.139.34.186:openailab/SpeechRecognition.git
+	git clone https://github.com/OAID/SpeechRecognition.git
 	cd SpeechRecognition
 	make
 	./app
