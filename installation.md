@@ -1,8 +1,9 @@
 # Installation
 
-## Install dependencies:
+## Install dependencies
 
 * Install zlib:
+
 ```
 	sudo apt-get install libtool autoconf wget perl subversion build-essential 
 	sudo apt-get install gfortran libatlas-dev  libatlas-base-dev git
@@ -15,17 +16,23 @@
 ```
 
 * Install alsa-lib:
+
 ```
 	wget ftp://ftp.alsa-project.org/pub/lib/alsa-lib-1.1.4.1.tar.bz2
-	tar -jxvf alsa-lib-1.1.4.1.tar
+	tar -jxvf alsa-lib-1.1.4.1.tar.bz
 	cd alsa-lib-1.1.4.1 && ./configure
-	make && make install
+	make
+	sudo make install
 ```
 
-## Corss compile Kaldi:
+## Corss compile Kaldi
+
 The whole Kaldi is too big for firefly-3399, so cross compiling is recommended. 
-### In x86_64 linxu:
+
+### In x86_64 linxu
+
 * Install cross compile toolchain.
+
 ```
 	sudo apt-get install gcc-arm-linux-gnueabihf -y
 	sudo apt-get install g++-arm-linux-gnueabihf -y
@@ -36,13 +43,15 @@ The whole Kaldi is too big for firefly-3399, so cross compiling is recommended.
 	sudo apt-get install g++-arm-linux-gnueabi gfortran-arm-linux-gnueabi -y
 ```
 
-* Download Kaldi.
+* Download Kaldi
+
 ```
 	git clone https://github.com/kaldi-asr/kaldi.git
 ```
 
 * Modify Makefiles.
-**  tools/Makefiels:
+
+tools/Makefiels:
 ```
 -	CXX = g++
 -	CC = gcc         # used for sph2pipe
@@ -50,42 +59,45 @@ The whole Kaldi is too big for firefly-3399, so cross compiling is recommended.
 +	CC = aarch64-linux-gnu-gcc-5          # used for sph2pipe
 ```
 
-** src/configure
+src/configure
 ```
 -	if [[ "TARGET_ARCH" != arm* && "TARGET_ARCH" != ppc64le && "TARGET_ARCH" != x86* ]] ; then 
 +	if [[ "TARGET_ARCH" != arm* && "TARGET_ARCH" != ppc64le && "TARGET_ARCH" != x86* && "TARGET_ARCH" != aarch* ]] ; then
 ```
 
 * Cross compile
+
 ```
 	cd kaldi/tools
 	make -j4
 	git clone https://github.com/xianyi/OpenBLAS.git
-	cd OpenBLAS 
+	cd OpenBLAS
 	make TARGET=ARMV8 BINARY=64 HOSTCC=gcc CC=aarch64-linux-gnu-gcc FC=aarch64-linux-gnu-gfortran
 	make PREFIX=install install
 	cd ../src
 	./configure --static --static-fst --openblas-root=../tools/OpenBLAS/install/ --host=aarch64-linux-gnu --use-cuda=no
 ```
 
-** After configured, modify src/kaldi.mk
+After configured, modify src/kaldi.mk
 ```
 -	-msse -msse2 -pthread \
-+	-pthread \ 
++	-pthread \
 ```
 
-** Then compile Kaldi
+Then compile Kaldi
 ```
 	make
 ```
 
 ### In firefly-3399:
+
 * Creat directory and copy necessary executable files from x86_64.
+
 ```
 	export USR_NAME="host_name_in_x86_64"
 	export USR_IPADD="IP_address_in_x86_64"
 	export KALDI_PATH="absolute_path_of_corss_compiled_Kaldi_in_x86_64"
-	sudo mkdir -p kaldi/src/{featbin,bin,gmmbin,latbin}
+	sudo mkdir -p ~/kaldi/src/{featbin,bin,gmmbin,latbin}
 	sudo scp ${USR_NAME}@${USR_IPADD}:${KALDI_PATH}/src/bin/am-info kaldi/src/bin/
 	sudo scp ${USR_NAME}@${USR_IPADD}:${KALDI_PATH}/src/featbin/{add-deltas,apply-cmvn,compute-cmvn-stats,compute-mfcc-feats,copy-feats,modify-cmvn-stats,splice-feats,transform-feats} kaldi/src/featbin/
 	sudo scp ${USR_NAME}@${USR_IPADD}:${KALDI_PATH}/src/gmmbin/gmm-latgen-faster kaldi/src/gmmbin
@@ -93,7 +105,9 @@ The whole Kaldi is too big for firefly-3399, so cross compiling is recommended.
 ```
 
 ## SpeechRecognition Compile
+
 Modify SpeechRecognition/conf/config.hpp, change the KALDI_ROOT to Kaldi root directory in your computer and GRAPH_DIR to model graph director in which the HCLG.fst is. Except the path, there are some other options which have same funtions in Kaldi. To achive a better accuracy, you should adjust the microphone's gain to a proper level.
+
 ```
 	git clone https://github.com/OAID/SpeechRecognition.git
 	cd SpeechRecognition
@@ -102,8 +116,9 @@ Modify SpeechRecognition/conf/config.hpp, change the KALDI_ROOT to Kaldi root di
 ```
 
 ## Train
+
 Download data and recipe for the pre-trained model in this project from [CR_resource](ftp://ftp.openailab.net/CR_resource/), or build your own model. After model generated, copy the model files (like, exp/tri1) to command_recognition/app directory. Then modefy the config.hpp, compile and run.
 
 This project only support GMM-HMM acoustic model with input of MFCC feature now. 
 
-Also see http://www.kaldi-asr.org/doc/kaldi_for_dummies.html for data preparing and model training.
+Also see [Kaldi](http://www.kaldi-asr.org/doc/kaldi_for_dummies.html) for data preparing and model training.
