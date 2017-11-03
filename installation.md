@@ -44,26 +44,41 @@ The whole Kaldi is too big for firefly-3399, so cross compiling is recommended.
 * Modify Makefiles.
 **  tools/Makefiels:
 ```
-	-CXX = g++
-	-CC = gcc         # used for sph2pipe
-	+CXX = aarch64-linux-gnu-g++-5
-	+CC = aarch64-linux-gnu-gcc-5          # used for sph2pipe
+-	CXX = g++
+-	CC = gcc         # used for sph2pipe
++	CXX = aarch64-linux-gnu-g++-5
++	CC = aarch64-linux-gnu-gcc-5          # used for sph2pipe
 ```
 
-* src/configure
+** src/configure
 ```
-	-if [[ "TARGET_ARCH" != arm* && "TARGET_ARCH" != ppc64le && "TARGET_ARCH" != x86* ]] ; then 
-	+if [[ "TARGET_ARCH" != arm* && "TARGET_ARCH" != ppc64le && "TARGET_ARCH" != x86* && "TARGET_ARCH" != aarch* ]] ; then
+-	if [[ "TARGET_ARCH" != arm* && "TARGET_ARCH" != ppc64le && "TARGET_ARCH" != x86* ]] ; then 
++	if [[ "TARGET_ARCH" != arm* && "TARGET_ARCH" != ppc64le && "TARGET_ARCH" != x86* && "TARGET_ARCH" != aarch* ]] ; then
 ```
 
-* Cross compile.
+* Cross compile
 ```
 	cd kaldi/tools
 	make -j4
+	git clone https://github.com/xianyi/OpenBLAS.git
+	cd OpenBLAS 
+	make TARGET=ARMV8 BINARY=64 HOSTCC=gcc CC=aarch64-linux-gnu-gcc FC=aarch64-linux-gnu-gfortran
+	make PREFIX=install install
 	cd ../src
 	./configure --static --static-fst --openblas-root=../tools/OpenBLAS/install/ --host=aarch64-linux-gnu --use-cuda=no
+```
+
+** After configured, modify src/kaldi.mk
+```
+-	-msse -msse2 -pthread \
++	-pthread \ 
+```
+
+** Then compile Kaldi
+```
 	make
 ```
+
 ### In firefly-3399:
 * Creat directory and copy necessary executable files from x86_64.
 ```
