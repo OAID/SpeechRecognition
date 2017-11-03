@@ -39,18 +39,26 @@ The whole Kaldi is too big for firefly-3399, so cross compiling is recommended.
 * Download Kaldi.
 ```
 	git clone https://github.com/kaldi-asr/kaldi.git
-	cd kaldi/tools
 ```
 
-* Modify Makefile.
+* Modify Makefiles.
+**  tools/Makefiels:
 ```
 	-CXX = g++
 	-CC = gcc         # used for sph2pipe
 	+CXX = aarch64-linux-gnu-g++-5
 	+CC = aarch64-linux-gnu-gcc-5          # used for sph2pipe
 ```
+
+* src/configure
+```
+	-if [[ "TARGET_ARCH" != arm* && "TARGET_ARCH" != ppc64le && "TARGET_ARCH" != x86* ]] ; then 
+	+if [[ "TARGET_ARCH" != arm* && "TARGET_ARCH" != ppc64le && "TARGET_ARCH" != x86* && "TARGET_ARCH" != aarch* ]] ; then
+```
+
 * Cross compile.
 ```
+	cd kaldi/tools
 	make -j4
 	cd ../src
 	./configure --static --static-fst --openblas-root=../tools/OpenBLAS/install/ --host=aarch64-linux-gnu --use-cuda=no
