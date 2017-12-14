@@ -19,7 +19,7 @@
 
 ```
 	wget ftp://ftp.alsa-project.org/pub/lib/alsa-lib-1.1.4.1.tar.bz2
-	tar -jxvf alsa-lib-1.1.4.1.tar.bz
+	tar -jxvf alsa-lib-1.1.4.1.tar.bz2
 	cd alsa-lib-1.1.4.1 && ./configure
 	make
 	sudo make install
