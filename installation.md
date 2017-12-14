@@ -61,8 +61,8 @@ tools/Makefiels:
 
 src/configure
 ```
--	if [[ "TARGET_ARCH" != arm* && "TARGET_ARCH" != ppc64le && "TARGET_ARCH" != x86* ]] ; then 
-+	if [[ "TARGET_ARCH" != arm* && "TARGET_ARCH" != ppc64le && "TARGET_ARCH" != x86* && "TARGET_ARCH" != aarch* ]] ; then
+-	if [[ "$TARGET_ARCH" != arm* && "$TARGET_ARCH" != ppc64le && "$TARGET_ARCH" != x86* ]] ; then 
++	if [[ "$TARGET_ARCH" != arm* && "$TARGET_ARCH" != ppc64le && "$TARGET_ARCH" != x86* && "$TARGET_ARCH" != aarch* ]] ; then
 ```
 
 * Cross compile
@@ -74,7 +74,7 @@ src/configure
 	cd OpenBLAS
 	make TARGET=ARMV8 BINARY=64 HOSTCC=gcc CC=aarch64-linux-gnu-gcc FC=aarch64-linux-gnu-gfortran
 	make PREFIX=install install
-	cd ../src
+	cd ../../src
 	./configure --static --static-fst --openblas-root=../tools/OpenBLAS/install/ --host=aarch64-linux-gnu --use-cuda=no
 ```
 
